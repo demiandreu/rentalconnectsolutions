@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rental Connect Solutions — Technology for Vacation Rental Managers</title>
+  <meta name="description" content="Finnish technology company building tools for vacation rental managers. GDPR-compliant, European infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0d0d0d;
+      --white: #ffffff;
+      --green: #1a6b5a;
+      --green-light: rgba(26,107,90,0.08);
+      --gray-50: #f8f8f5;
+      --gray-100: #ededea;
+      --gray-400: #aaa9a2;
+      --gray-600: #5a5a54;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 6vw;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+    .nav-logo-name { font-family: var(--serif); font-size: 0.98rem; font-weight: 700; color: var(--black); letter-spacing: -0.01em; }
+    .nav-logo-sub { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-top: 2px; }
+    .nav-cta { font-size: 0.8rem; font-weight: 600; color: var(--black); text-decoration: none; border: 1.5px solid var(--black); padding: 0.42rem 1rem; border-radius: 3px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 120px 6vw 80px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 2rem; }
+    .hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; color: var(--black); max-width: 680px; margin: 0 auto 1.6rem; }
+    .hero h1 em { font-style: italic; color: var(--green); }
+    .hero-desc { font-size: 1rem; font-weight: 300; color: var(--gray-600); max-width: 440px; margin: 0 auto 3rem; line-height: 1.75; }
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.45rem; background: var(--black); color: var(--white); text-decoration: none; padding: 0.8rem 1.6rem; border-radius: 3px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--green); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--black); text-decoration: none; padding: 0.8rem 1.6rem; border-radius: 3px; font-size: 0.85rem; font-weight: 500; border: 1.5px solid var(--gray-100); transition: border-color 0.2s; }
+    .btn-outline:hover { border-color: var(--black); }
+
+    .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: var(--gray-400); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+    .hero-scroll-line { width: 1px; height: 32px; background: linear-gradient(to bottom, var(--gray-400), transparent); animation: scrollLine 2s ease-in-out infinite; }
+    @keyframes scrollLine { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+    /* DIVIDER */
+    .section-divider { height: 1px; background: var(--gray-100); margin: 0 6vw; }
+
+    /* PRODUCT */
+    .product-section { padding: 6rem 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; }
+    .product-title { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 1rem; }
+    .product-desc { font-size: 0.92rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; margin-bottom: 2rem; }
+    .product-link { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--green); border-bottom: 1px solid var(--green); padding-bottom: 1px; transition: opacity 0.2s; }
+    .product-link:hover { opacity: 0.7; }
+
+    .product-card { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 14px; padding: 2.4rem; }
+    .product-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .product-card-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; }
+    .product-card-url { font-size: 0.72rem; font-weight: 500; color: var(--green); letter-spacing: 0.02em; margin-bottom: 1.2rem; display: block; }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: var(--gray-600); line-height: 1.4; }
+    .feature-list li::before { content: '—'; color: var(--green); flex-shrink: 0; font-weight: 600; }
+    .product-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-100); }
+    .product-badge { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 3px; background: var(--white); border: 1px solid var(--gray-100); color: var(--gray-600); }
+
+    /* ABOUT STRIP */
+    .about-strip { background: var(--black); padding: 5rem 6vw; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+    .about-item { padding: 0 2.5rem; border-right: 1px solid rgba(255,255,255,0.07); }
+    .about-item:first-child { padding-left: 0; }
+    .about-item:last-child { border-right: none; }
+    .about-item-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+    .about-item-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .about-item-text { font-size: 0.82rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* CONTACT (rediseñado sin formulario) */
+    .contact-section { padding: 7rem 6vw; max-width: 720px; margin: 0 auto; text-align: center; }
+    .contact-title { font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 1.2rem; }
+    .contact-desc { font-size: 0.95rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; margin-bottom: 3.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    .contact-card { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 12px; padding: 2rem 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .contact-card:hover { border-color: var(--green); transform: translateY(-2px); }
+    .contact-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .contact-card-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); }
+    .contact-card-value { font-size: 0.92rem; font-weight: 500; color: var(--black); word-break: break-word; }
+    .contact-card-sub { font-size: 0.72rem; font-weight: 400; color: var(--gray-400); margin-top: 0.2rem; }
+
+    .contact-address { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.4rem; background: var(--white); border: 1px solid var(--gray-100); border-radius: 8px; font-size: 0.82rem; color: var(--gray-600); }
+    .contact-address-icon { font-size: 0.95rem; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--gray-100); padding: 2rem 6vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-left { font-size: 0.75rem; color: var(--gray-400); }
+    .footer-left strong { color: var(--gray-600); font-weight: 600; }
+    .footer-right { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .footer-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.55rem; border-radius: 3px; border: 1px solid var(--gray-100); color: var(--gray-400); }
+    .footer-tag.green { border-color: rgba(26,107,90,0.2); color: var(--green); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .product-section { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 6vw; }
+      .about-strip { grid-template-columns: 1fr; }
+      .about-item { padding: 2rem 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .about-item:last-child { border-bottom: none; }
+      .contact-section { padding: 5rem 6vw; }
+      .contact-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-name">Rental Connect Solutions</span>
+      <span class="nav-logo-sub">Helsinki · Finland</span>
+    </a>
+    <a href="#contact" class="nav-cta">Contacto</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      Technology for vacation rental managers
+    </div>
+    <h1>Software que <em>simplifica</em><br/>la gestión del<br/>alquiler vacacional</h1>
+    <p class="hero-desc">
+      Empresa tecnológica finlandesa fundada por gestores de alquiler vacacional. Construimos herramientas para automatizar y escalar la operativa diaria.
+    </p>
+    <div class="hero-actions">
+      <a href="#product" class="btn-primary">
+        Nuestro producto
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1 6.5h11M6.5 1l5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn-outline">Contactar</a>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <div id="product" style="max-width:1100px;margin:0 auto;">
+    <div class="product-section">
+      <div>
+        <div class="section-label">Producto principal</div>
+        <h2 class="product-title">Check-in automatizado<br/>por WhatsApp</h2>
+        <p class="product-desc">
+          RCS Check-in automatiza todo el proceso de llegada de los huéspedes: recogida de datos, envío del código de acceso a la hora exacta y solicitud de reseña al final de la estancia. Sin intervención manual, en 6 idiomas, 24/7.
+        </p>
+        <a href="https://rcscheckin.com" target="_blank" class="product-link">
+          rcscheckin.com
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="product-card">
+        <div class="product-card-icon">💬</div>
+        <div class="product-card-name">RCS Check-in</div>
+        <span class="product-card-url">rcscheckin.com</span>
+        <ul class="feature-list">
+          <li>Automatización del check-in por WhatsApp con IA</li>
+          <li>Chatbot multilingüe en 6 idiomas (ES, EN, DE, FR, IT, NL)</li>
+          <li>Envío automático del código de cerradura a la hora de llegada</li>
+          <li>Sincronización con Beds24, AvaiBook y Smoobu</li>
+          <li>Solicitud automática de reseñas post-estancia</li>
+          <li>Gestión multi-propiedad desde un panel único</li>
+        </ul>
+        <div class="product-badges">
+          <span class="product-badge">Beds24</span>
+          <span class="product-badge">AvaiBook</span>
+          <span class="product-badge">Smoobu</span>
+          <span class="product-badge">WhatsApp</span>
+          <span class="product-badge">Claude AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="about-strip">
+    <div class="about-item">
+      <span class="about-item-icon">🇫🇮</span>
+      <div class="about-item-title">Empresa finlandesa</div>
+      <p class="about-item-text">Fundada en Helsinki por un gestor de alquiler vacacional que conoce el sector desde dentro.</p>
+    </div>
+    <div class="about-item">
+      <span class="about-item-icon">🇪🇺</span>
+      <div class="about-item-title">GDPR & EU Infrastructure</div>
+      <p class="about-item-text">Infraestructura 100% europea. Los datos de tus huéspedes nunca salen de Europa.</p>
+    </div>
+    <div class="about-item">
+      <span class="about-item-icon">⚡</span>
+      <div class="about-item-title">Construido para escalar</div>
+      <p class="about-item-text">Desde una propiedad hasta una cartera completa, sin aumentar la carga operativa.</p>
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="contact-section">
+      <div class="section-label">Contacto</div>
+      <h2 class="contact-title">Hablemos</h2>
+      <p class="contact-desc">
+        ¿Tienes alguna pregunta sobre nuestros productos o quieres explorar una colaboración? Escríbenos por email o WhatsApp, respondemos en menos de 24 horas.
+      </p>
+
+      <div class="contact-grid">
+        <a href="mailto:rentalconnectsolutions@gmail.com" class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">rentalconnectsolutions@gmail.com</div>
+        </a>
+
+        <a href="https://wa.me/34654610642" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon">💬</div>
+          <div class="contact-card-label">WhatsApp</div>
+          <div class="contact-card-value">+34 654 610 642</div>
+          <div class="contact-card-sub">también +358 45 224 2760</div>
+        </a>
+      </div>
+
+      <div class="contact-address">
+        <span class="contact-address-icon">📍</span>
+        Telttakuja 3D, 00770 Helsinki, Finland
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <strong>Rental Connect Solutions Tmi</strong> · Telttakuja 3D, 00770 Helsinki · © 2026
+    </div>
+    <div class="footer-right">
+      <span class="footer-tag green">GDPR Compliant</span>
+      <span class="footer-tag green">EU Infrastructure</span>
+      <span class="footer-tag">🇫🇮 Finland</span>
+    </div>
+  </footer>
+
+</body>
+</html>
