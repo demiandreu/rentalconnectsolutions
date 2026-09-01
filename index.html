@@ -1,280 +1,1168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rental Connect Solutions — Technology for Vacation Rental Managers</title>
-  <meta name="description" content="Finnish technology company building tools for vacation rental managers. GDPR-compliant, European infrastructure." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-i18n="meta_title">Rental Connect Solutions | Gestión y Automatización de Alquileres Vacacionales</title>
+<meta name="description" content="Gestión profesional de alquileres vacacionales (Airbnb, Booking.com) como cohost y automatización con IA: check-in automático, precios dinámicos, channel manager y más." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://rentalconnectsolutions.com/" />
 
-    :root {
-      --black: #0d0d0d;
-      --white: #ffffff;
-      --green: #1a6b5a;
-      --green-light: rgba(26,107,90,0.08);
-      --gray-50: #f8f8f5;
-      --gray-100: #ededea;
-      --gray-400: #aaa9a2;
-      --gray-600: #5a5a54;
-      --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Inter', system-ui, sans-serif;
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Rental Connect Solutions" />
+<meta property="og:title" content="Rental Connect Solutions | Gestión y Automatización de Alquileres Vacacionales" />
+<meta property="og:description" content="Cohosting profesional y automatización con IA para Airbnb, Booking.com y alquileres vacacionales." />
+<meta property="og:locale" content="es_ES" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Rental Connect Solutions",
+  "alternateName": "Rental Connect Solutions Tmi",
+  "url": "https://rentalconnectsolutions.com/",
+  "email": "rentalconnectsolutions@gmail.com",
+  "telephone": "+34654610642",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Telttakuja 3D",
+    "postalCode": "00770",
+    "addressLocality": "Helsinki",
+    "addressCountry": "FI"
+  },
+  "sameAs": ["https://rcscheckin.com"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Short-Term Rental Property Management",
+  "provider": { "@type": "Organization", "name": "Rental Connect Solutions" },
+  "areaServed": "EU",
+  "description": "Full-service short-term rental and Airbnb co-hosting management including guest communication, dynamic pricing, check-in and cleaning coordination."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Short-Term Rental Automation",
+  "provider": { "@type": "Organization", "name": "Rental Connect Solutions" },
+  "areaServed": "EU",
+  "description": "Automation setup for short-term rentals: channel manager, AI guest communication, automated check-in, dynamic pricing and guest compliance workflows."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye la comisión de gestión del 15%?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El 15% se aplica sobre los ingresos por alojamiento e incluye la gestión operativa completa. Los impuestos, las fianzas y los gastos repercutibles quedan excluidos de la comisión." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El setup de automatización de 499€ es un pago único?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, los 499€ cubren la implementación y configuración inicial del sistema de automatización. El soporte continuo es opcional desde 49€/mes, y las suscripciones a software de terceros pueden facturarse por separado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Gestionan el registro de viajeros y la tasa turística en cualquier país?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Configuramos flujos de registro de viajeros, fianzas y tasa turística según los requisitos locales aplicables y las integraciones disponibles. Estos requisitos varían según el destino." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo combinar gestión de propiedad y automatización?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Muchos propietarios empiezan con automatización y más adelante añaden gestión completa, o al revés, según cómo evoluciona su operación." }
     }
+  ]
+}
+</script>
 
-    html { scroll-behavior: smooth; }
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: var(--sans);
-      background: var(--white);
-      color: var(--black);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+  :root {
+    --navy: #0b2b40;
+    --navy-2: #123c56;
+    --turquoise: #17a398;
+    --turquoise-light: rgba(23,163,152,0.09);
+    --sand: #efe5cf;
+    --sand-light: #faf6ec;
+    --white: #ffffff;
+    --ink: #101c24;
+    --gray-600: #5c6b72;
+    --gray-400: #98a5aa;
+    --gray-100: #eceee9;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --radius: 16px;
+  }
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 6vw;
-      background: rgba(255,255,255,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--gray-100);
-    }
-    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
-    .nav-logo-name { font-family: var(--serif); font-size: 0.98rem; font-weight: 700; color: var(--black); letter-spacing: -0.01em; }
-    .nav-logo-sub { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-top: 2px; }
-    .nav-cta { font-size: 0.8rem; font-weight: 600; color: var(--black); text-decoration: none; border: 1.5px solid var(--black); padding: 0.42rem 1rem; border-radius: 3px; transition: background 0.2s, color 0.2s; }
-    .nav-cta:hover { background: var(--black); color: var(--white); }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--white); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; }
+  section { scroll-margin-top: 70px; }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 120px 6vw 80px;
-      text-align: center;
-      position: relative;
-    }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 2rem; }
-    .hero-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
-    .hero h1 { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; color: var(--black); max-width: 680px; margin: 0 auto 1.6rem; }
-    .hero h1 em { font-style: italic; color: var(--green); }
-    .hero-desc { font-size: 1rem; font-weight: 300; color: var(--gray-600); max-width: 440px; margin: 0 auto 3rem; line-height: 1.75; }
-    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 6vw; }
+  .section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.9rem; }
+  .h2 { font-family: var(--serif); font-weight: 700; font-size: clamp(1.7rem, 3vw, 2.6rem); line-height: 1.15; letter-spacing: -0.02em; color: var(--navy); }
+  .lede { font-size: 0.95rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; max-width: 620px; }
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
 
-    .btn-primary { display: inline-flex; align-items: center; gap: 0.45rem; background: var(--black); color: var(--white); text-decoration: none; padding: 0.8rem 1.6rem; border-radius: 3px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--green); }
-    .btn-outline { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--black); text-decoration: none; padding: 0.8rem 1.6rem; border-radius: 3px; font-size: 0.85rem; font-weight: 500; border: 1.5px solid var(--gray-100); transition: border-color 0.2s; }
-    .btn-outline:hover { border-color: var(--black); }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 66px; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-100); }
+  .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+  .nav-logo-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+  .nav-logo-sub { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--turquoise); margin-top: 2px; }
+  .nav-links { display: flex; align-items: center; gap: 1.8rem; }
+  .nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--ink); text-decoration: none; }
+  .nav-links a:hover { color: var(--turquoise); }
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .lang-switch { display: flex; border: 1px solid var(--gray-100); border-radius: 20px; overflow: hidden; }
+  .lang-btn { border: none; background: transparent; font-size: 0.68rem; font-weight: 700; padding: 0.32rem 0.7rem; cursor: pointer; color: var(--gray-600); letter-spacing: 0.04em; }
+  .lang-btn.active { background: var(--navy); color: var(--white); }
+  .nav-cta { font-size: 0.78rem; font-weight: 600; color: var(--white); background: var(--turquoise); text-decoration: none; padding: 0.5rem 1.05rem; border-radius: 24px; white-space: nowrap; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--navy); }
+  .nav-burger { display: none; }
+  @media (max-width: 900px) { .nav-links { display: none; } }
 
-    .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.4rem; color: var(--gray-400); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
-    .hero-scroll-line { width: 1px; height: 32px; background: linear-gradient(to bottom, var(--gray-400), transparent); animation: scrollLine 2s ease-in-out infinite; }
-    @keyframes scrollLine { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 130px 6vw 90px; text-align: center; position: relative; background: radial-gradient(circle at 50% 0%, var(--turquoise-light), transparent 60%), var(--white); }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--navy); background: var(--sand-light); border: 1px solid var(--sand); padding: 0.5rem 1.1rem; border-radius: 30px; margin-bottom: 2rem; }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--turquoise); }
+  .hero h1 { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.02em; color: var(--navy); max-width: 780px; margin: 0 auto 1.4rem; }
+  .hero h1 em { font-style: italic; color: var(--turquoise); }
+  .hero-sub { font-size: 1.08rem; font-weight: 500; color: var(--ink); max-width: 620px; margin: 0 auto 1.1rem; }
+  .hero-desc { font-size: 0.95rem; font-weight: 300; color: var(--gray-600); max-width: 560px; margin: 0 auto 2.6rem; line-height: 1.75; }
+  .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.6rem; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.45rem; background: var(--turquoise); color: var(--white); text-decoration: none; padding: 0.85rem 1.7rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s, transform 0.2s; }
+  .btn-primary:hover { background: var(--navy); transform: translateY(-1px); }
+  .btn-outline { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--navy); text-decoration: none; padding: 0.85rem 1.7rem; border-radius: 30px; font-size: 0.85rem; font-weight: 600; border: 1.5px solid var(--gray-100); transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: var(--navy); }
+  .hero-tags { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+  .hero-tag { font-size: 0.72rem; font-weight: 600; color: var(--navy-2); background: var(--white); border: 1px solid var(--gray-100); padding: 0.35rem 0.8rem; border-radius: 20px; }
 
-    /* DIVIDER */
-    .section-divider { height: 1px; background: var(--gray-100); margin: 0 6vw; }
+  /* TWO WAYS */
+  .two-ways { padding: 6rem 0; }
+  .two-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-top: 2.5rem; }
+  .service-card { border-radius: var(--radius); padding: 2.6rem; border: 1px solid var(--gray-100); display: flex; flex-direction: column; }
+  .service-card.pm { background: var(--navy); color: var(--white); }
+  .service-card.auto { background: var(--sand-light); border-color: var(--sand); }
+  .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.4rem; }
+  .service-card.pm .service-icon { background: rgba(255,255,255,0.1); }
+  .service-card.auto .service-icon { background: var(--turquoise); }
+  .service-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .service-card.pm .service-eyebrow { color: var(--turquoise); }
+  .service-card.auto .service-eyebrow { color: var(--turquoise); }
+  .service-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .service-card.pm .service-title { color: var(--white); }
+  .service-card.auto .service-title { color: var(--navy); }
+  .service-copy { font-size: 0.88rem; font-weight: 300; line-height: 1.7; margin-bottom: 1.6rem; }
+  .service-card.pm .service-copy { color: rgba(255,255,255,0.75); }
+  .service-card.auto .service-copy { color: var(--gray-600); }
+  .service-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 1rem; margin-bottom: 1.8rem; }
+  .service-list li { font-size: 0.8rem; font-weight: 400; display: flex; gap: 0.5rem; line-height: 1.4; }
+  .service-list li::before { content: '—'; flex-shrink: 0; }
+  .service-card.pm .service-list li::before { color: var(--turquoise); }
+  .service-card.auto .service-list li::before { color: var(--turquoise); }
+  .service-card.pm .service-list li { color: rgba(255,255,255,0.85); }
+  .service-card.auto .service-list li { color: var(--gray-600); }
+  .service-price-row { display: flex; align-items: baseline; gap: 0.5rem; margin-top: auto; padding-top: 1.4rem; border-top: 1px solid; margin-bottom: 1rem; }
+  .service-card.pm .service-price-row { border-color: rgba(255,255,255,0.12); }
+  .service-card.auto .service-price-row { border-color: var(--sand); }
+  .service-price { font-family: var(--serif); font-size: 1.7rem; font-weight: 700; }
+  .service-card.pm .service-price { color: var(--white); }
+  .service-card.auto .service-price { color: var(--navy); }
+  .service-price-note { font-size: 0.78rem; }
+  .service-card.pm .service-price-note { color: rgba(255,255,255,0.6); }
+  .service-card.auto .service-price-note { color: var(--gray-600); }
+  .service-fine { font-size: 0.72rem; margin-bottom: 1.4rem; }
+  .service-card.pm .service-fine { color: rgba(255,255,255,0.55); }
+  .service-card.auto .service-fine { color: var(--gray-400); }
+  .service-cta { align-self: flex-start; }
+  .service-card.pm .service-cta { background: var(--turquoise); color: var(--white); }
+  .service-card.auto .service-cta { background: var(--navy); color: var(--white); }
 
-    /* PRODUCT */
-    .product-section { padding: 6rem 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; }
-    .section-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 1rem; }
-    .product-title { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 1rem; }
-    .product-desc { font-size: 0.92rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; margin-bottom: 2rem; }
-    .product-link { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; font-size: 0.85rem; font-weight: 600; color: var(--green); border-bottom: 1px solid var(--green); padding-bottom: 1px; transition: opacity 0.2s; }
-    .product-link:hover { opacity: 0.7; }
+  @media (max-width: 860px) { .two-grid { grid-template-columns: 1fr; } .service-list { grid-template-columns: 1fr; } }
 
-    .product-card { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 14px; padding: 2.4rem; }
-    .product-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--green); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 1.5rem; }
-    .product-card-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; }
-    .product-card-url { font-size: 0.72rem; font-weight: 500; color: var(--green); letter-spacing: 0.02em; margin-bottom: 1.2rem; display: block; }
-    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .feature-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: var(--gray-600); line-height: 1.4; }
-    .feature-list li::before { content: '—'; color: var(--green); flex-shrink: 0; font-weight: 600; }
-    .product-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-100); }
-    .product-badge { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 3px; background: var(--white); border: 1px solid var(--gray-100); color: var(--gray-600); }
+  /* PROCESS */
+  .process-section { padding: 6rem 0; background: var(--sand-light); }
+  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 3rem; }
+  .process-step { background: var(--white); border: 1px solid var(--gray-100); border-radius: 12px; padding: 1.4rem; position: relative; }
+  .process-num { width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: var(--white); font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 0.8rem; }
+  .process-title { font-size: 0.86rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .process-desc { font-size: 0.76rem; color: var(--gray-600); line-height: 1.5; }
 
-    /* ABOUT STRIP */
-    .about-strip { background: var(--black); padding: 5rem 6vw; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
-    .about-item { padding: 0 2.5rem; border-right: 1px solid rgba(255,255,255,0.07); }
-    .about-item:first-child { padding-left: 0; }
-    .about-item:last-child { border-right: none; }
-    .about-item-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
-    .about-item-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
-    .about-item-text { font-size: 0.82rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.65; }
+  /* AI + PRICING + CHANNELS shared "feature" layout */
+  .feature-section { padding: 6rem 0; }
+  .feature-section.alt { background: var(--navy); color: var(--white); }
+  .feature-section.alt .h2 { color: var(--white); }
+  .feature-section.alt .lede { color: rgba(255,255,255,0.7); }
+  .feature-section.alt .section-label { color: var(--turquoise); }
+  .pill-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
+  .pill { font-size: 0.78rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--gray-100); color: var(--navy-2); }
+  .feature-section.alt .pill { border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.85); }
+  .note-box { margin-top: 1.6rem; font-size: 0.82rem; padding: 1rem 1.2rem; border-radius: 10px; background: var(--turquoise-light); color: var(--navy-2); border-left: 3px solid var(--turquoise); max-width: 640px; }
+  .feature-section.alt .note-box { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); border-left-color: var(--turquoise); }
 
-    /* CONTACT (rediseñado sin formulario) */
-    .contact-section { padding: 7rem 6vw; max-width: 720px; margin: 0 auto; text-align: center; }
-    .contact-title { font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); margin-bottom: 1.2rem; }
-    .contact-desc { font-size: 0.95rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; margin-bottom: 3.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+  /* channel diagram */
+  .channel-flow { display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 2.5rem; }
+  .flow-box { background: var(--white); border: 1px solid var(--gray-100); border-radius: 12px; padding: 1rem 1.4rem; font-size: 0.82rem; font-weight: 600; color: var(--navy); text-align: center; }
+  .flow-box.center-box { background: var(--turquoise); color: var(--white); border-color: var(--turquoise); }
+  .flow-arrow { color: var(--gray-400); font-size: 1.2rem; }
+  .flow-sub { font-size: 0.68rem; font-weight: 400; color: var(--gray-400); display: block; margin-top: 0.2rem; }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
-    .contact-card { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 12px; padding: 2rem 1.5rem; text-align: center; transition: border-color 0.2s, transform 0.2s; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-    .contact-card:hover { border-color: var(--green); transform: translateY(-2px); }
-    .contact-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 0.5rem; }
-    .contact-card-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); }
-    .contact-card-value { font-size: 0.92rem; font-weight: 500; color: var(--black); word-break: break-word; }
-    .contact-card-sub { font-size: 0.72rem; font-weight: 400; color: var(--gray-400); margin-top: 0.2rem; }
+  /* compliance flow vertical */
+  .compliance-flow { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; margin: 2.5rem 0; }
+  .compliance-node { background: var(--white); border: 1px solid var(--gray-100); border-radius: 10px; padding: 0.7rem 1.4rem; font-size: 0.82rem; font-weight: 600; color: var(--navy); min-width: 240px; text-align: center; }
+  .compliance-arrow { color: var(--turquoise); font-size: 1rem; }
+  .disclaimer { font-size: 0.76rem; color: var(--gray-400); max-width: 640px; margin: 0 auto; line-height: 1.6; padding-top: 1rem; border-top: 1px solid var(--gray-100); }
 
-    .contact-address { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.4rem; background: var(--white); border: 1px solid var(--gray-100); border-radius: 8px; font-size: 0.82rem; color: var(--gray-600); }
-    .contact-address-icon { font-size: 0.95rem; }
+  /* TECHNOLOGY */
+  .tech-section { padding: 6rem 0; }
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 2.5rem; }
+  .tech-card { background: var(--sand-light); border: 1px solid var(--sand); border-radius: var(--radius); padding: 2rem; }
+  .tech-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--turquoise); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; margin-bottom: 1.2rem; color: var(--white); }
+  .tech-name { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+  .tech-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.8rem; display: block; }
+  .tech-desc { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; margin-bottom: 1rem; }
+  .tech-link { font-size: 0.8rem; font-weight: 600; color: var(--turquoise); text-decoration: none; border-bottom: 1px solid var(--turquoise); }
+  .category-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+  .category-chip { font-size: 0.78rem; font-weight: 600; color: var(--navy); background: var(--white); border: 1px solid var(--gray-100); padding: 0.55rem 1.1rem; border-radius: 20px; }
 
-    /* FOOTER */
-    footer { border-top: 1px solid var(--gray-100); padding: 2rem 6vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-left { font-size: 0.75rem; color: var(--gray-400); }
-    .footer-left strong { color: var(--gray-600); font-weight: 600; }
-    .footer-right { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .footer-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.55rem; border-radius: 3px; border: 1px solid var(--gray-100); color: var(--gray-400); }
-    .footer-tag.green { border-color: rgba(26,107,90,0.2); color: var(--green); }
+  /* WHO IS THIS FOR */
+  .who-section { padding: 6rem 0; background: var(--navy); color: var(--white); }
+  .who-section .h2 { color: var(--white); }
+  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+  .who-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 1.8rem; }
+  .who-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+  .who-title { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+  .who-quote { font-size: 0.82rem; font-style: italic; color: rgba(255,255,255,0.65); line-height: 1.6; }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .product-section { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 6vw; }
-      .about-strip { grid-template-columns: 1fr; }
-      .about-item { padding: 2rem 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-      .about-item:last-child { border-bottom: none; }
-      .contact-section { padding: 5rem 6vw; }
-      .contact-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero-actions { flex-direction: column; align-items: center; }
-    }
-  </style>
+  /* PRICING */
+  .pricing-section { padding: 6rem 0; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2.5rem; align-items: stretch; }
+  .price-card { border: 1px solid var(--gray-100); border-radius: var(--radius); padding: 2rem; display: flex; flex-direction: column; }
+  .price-card.highlight { border-color: var(--turquoise); box-shadow: 0 20px 50px -30px rgba(23,163,152,0.4); }
+  .price-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--turquoise); margin-bottom: 0.6rem; }
+  .price-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
+  .price-amount { font-family: var(--serif); font-size: 2.2rem; font-weight: 700; color: var(--navy); }
+  .price-unit { font-size: 0.78rem; color: var(--gray-600); margin-bottom: 1.4rem; display: block; }
+  .price-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.6rem; flex-grow: 1; }
+  .price-list li { font-size: 0.8rem; color: var(--gray-600); display: flex; gap: 0.5rem; line-height: 1.4; }
+  .price-list li::before { content: '✓'; color: var(--turquoise); font-weight: 700; flex-shrink: 0; }
+  .price-extra { font-size: 0.74rem; color: var(--gray-400); margin-bottom: 1.2rem; }
+  .price-cta { text-align: center; }
+  @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+  /* WHY */
+  .why-section { padding: 6rem 0; background: var(--sand-light); }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2.5rem; }
+  .highlight-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .highlight-list li { font-size: 0.88rem; font-weight: 500; color: var(--navy); display: flex; gap: 0.7rem; align-items: flex-start; }
+  .highlight-list li::before { content: '◆'; color: var(--turquoise); font-size: 0.6rem; margin-top: 0.4rem; }
+  @media (max-width: 860px) { .why-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+  /* ABOUT strip */
+  .about-strip { padding: 5rem 0; }
+  .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 2.5rem; }
+  .about-item { padding: 0 2rem; border-right: 1px solid var(--gray-100); }
+  .about-item:first-child { padding-left: 0; }
+  .about-item:last-child { border-right: none; }
+  .about-item-icon { font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
+  .about-item-title { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .about-item-text { font-size: 0.8rem; font-weight: 300; color: var(--gray-600); line-height: 1.6; }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .about-item { padding: 1.5rem 0; border-right: none; border-bottom: 1px solid var(--gray-100); } .about-item:last-child { border-bottom: none; } }
+
+  /* FAQ */
+  .faq-section { padding: 6rem 0; }
+  .faq-item { border-bottom: 1px solid var(--gray-100); padding: 1.3rem 0; }
+  .faq-q { font-size: 0.92rem; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--turquoise); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a { font-size: 0.85rem; color: var(--gray-600); line-height: 1.65; max-height: 0; overflow: hidden; transition: max-height 0.25s ease, margin 0.25s ease; }
+  .faq-item.open .faq-a { max-height: 300px; margin-top: 0.8rem; }
+
+  /* FORMS */
+  .form-section { padding: 6rem 0; background: var(--navy); }
+  .form-card { background: var(--white); border-radius: var(--radius); padding: 2.5rem; max-width: 760px; margin: 2.5rem auto 0; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-field.full { grid-column: 1 / -1; }
+  .form-field label { font-size: 0.75rem; font-weight: 600; color: var(--navy); }
+  .form-field input, .form-field select, .form-field textarea { font-family: var(--sans); font-size: 0.85rem; padding: 0.7rem 0.9rem; border: 1px solid var(--gray-100); border-radius: 8px; color: var(--ink); background: var(--sand-light); }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--turquoise); }
+  .radio-row { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  .radio-row label { font-size: 0.82rem; font-weight: 400; display: flex; align-items: center; gap: 0.4rem; color: var(--gray-600); }
+  .checkbox-row { display: flex; gap: 0.6rem; align-items: flex-start; margin: 1rem 0 1.4rem; }
+  .checkbox-row input { margin-top: 0.2rem; }
+  .checkbox-row label { font-size: 0.76rem; color: var(--gray-600); line-height: 1.5; }
+  .form-submit { width: 100%; border: none; cursor: pointer; }
+  .form-thanks { display: none; text-align: center; padding: 2rem; font-size: 0.9rem; color: var(--navy); font-weight: 500; }
+  .form-thanks.show { display: block; }
+  @media (max-width: 700px) { .form-grid { grid-template-columns: 1fr; } .form-card { padding: 1.6rem; } }
+
+  /* FINAL CTA */
+  .final-cta { padding: 7rem 0; text-align: center; background: linear-gradient(180deg, var(--sand-light), var(--white)); }
+  .final-cta h2 { font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 3rem); color: var(--navy); margin-bottom: 1rem; }
+  .final-cta p { font-size: 0.95rem; color: var(--gray-600); max-width: 560px; margin: 0 auto 2.4rem; }
+  .final-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--gray-100); padding: 2.2rem 6vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-left { font-size: 0.75rem; color: var(--gray-400); }
+  .footer-left strong { color: var(--gray-600); font-weight: 600; }
+  .footer-right { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .footer-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.55rem; border-radius: 3px; border: 1px solid var(--gray-100); color: var(--gray-400); }
+  .footer-tag.green { border-color: rgba(23,163,152,0.25); color: var(--turquoise); }
+
+  /* sticky mobile cta */
+  .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: var(--white); border-top: 1px solid var(--gray-100); padding: 0.7rem 5vw; }
+  .sticky-cta a { display: block; text-align: center; background: var(--turquoise); color: var(--white); text-decoration: none; padding: 0.8rem; border-radius: 30px; font-size: 0.85rem; font-weight: 700; }
+  @media (max-width: 768px) { .sticky-cta { display: block; } body { padding-bottom: 66px; } }
+
+  @media (max-width: 480px) { .hero h1 { font-size: 2.1rem; } .hero-actions { flex-direction: column; align-items: stretch; } }
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-name">Rental Connect Solutions</span>
-      <span class="nav-logo-sub">Helsinki · Finland</span>
-    </a>
-    <a href="#contact" class="nav-cta">Contacto</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-dot"></span>
-      Technology for vacation rental managers
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-name">Rental Connect Solutions</span>
+    <span class="nav-logo-sub">Helsinki · Finland</span>
+  </a>
+  <div class="nav-links">
+    <a href="#services" data-i18n="nav_services">Servicios</a>
+    <a href="#process" data-i18n="nav_process">Automatización</a>
+    <a href="#technology" data-i18n="nav_tech">Tecnología</a>
+    <a href="#pricing" data-i18n="nav_pricing">Precios</a>
+    <a href="#contact" data-i18n="nav_contact">Contacto</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
     </div>
-    <h1>Software que <em>simplifica</em><br/>la gestión del<br/>alquiler vacacional</h1>
-    <p class="hero-desc">
-      Empresa tecnológica finlandesa fundada por gestores de alquiler vacacional. Construimos herramientas para automatizar y escalar la operativa diaria.
-    </p>
-    <div class="hero-actions">
-      <a href="#product" class="btn-primary">
-        Nuestro producto
-        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1 6.5h11M6.5 1l5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#contact" class="btn-outline">Contactar</a>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
-  </section>
+    <a href="#assessment" class="nav-cta" data-i18n="nav_cta">Evaluación gratis</a>
+  </div>
+</nav>
 
-  <div class="section-divider"></div>
+<section class="hero">
+  <div class="hero-badge">
+    <span class="hero-badge-dot"></span>
+    <span data-i18n="hero_badge">Cohosting y automatización de alquileres vacacionales</span>
+  </div>
+  <h1 data-i18n-html="hero_title">Gestionamos tu <em>Airbnb</em> como cohost, o automatizamos tu alquiler vacacional</h1>
+  <p class="hero-sub" data-i18n="hero_sub">Gestión profesional y automatización inteligente para Airbnb, Booking.com y alquileres vacacionales.</p>
+  <p class="hero-desc" data-i18n="hero_desc">Desde la comunicación con huéspedes y el precio dinámico hasta el check-in, el registro de viajeros, la limpieza y el mantenimiento: construimos sistemas que hacen tu alquiler más fácil de operar y más rentable.</p>
+  <div class="hero-actions">
+    <a href="#assessment" class="btn-primary" data-i18n="hero_cta1">Evaluación Gratuita de tu Propiedad</a>
+    <a href="#services" class="btn-outline" data-i18n="hero_cta2">Ver Nuestros Servicios</a>
+  </div>
+  <div class="hero-tags">
+    <span class="hero-tag" data-i18n="hero_tag1">🏠 Cohosting Airbnb</span>
+    <span class="hero-tag" data-i18n="hero_tag2">⚙️ Automatización con IA</span>
+    <span class="hero-tag" data-i18n="hero_tag3">🇪🇺 Infraestructura Europea / GDPR</span>
+  </div>
+</section>
 
-  <div id="product" style="max-width:1100px;margin:0 auto;">
-    <div class="product-section">
-      <div>
-        <div class="section-label">Producto principal</div>
-        <h2 class="product-title">Check-in automatizado<br/>por WhatsApp</h2>
-        <p class="product-desc">
-          RCS Check-in automatiza todo el proceso de llegada de los huéspedes: recogida de datos, envío del código de acceso a la hora exacta y solicitud de reseña al final de la estancia. Sin intervención manual, en 6 idiomas, 24/7.
-        </p>
-        <a href="https://rcscheckin.com" target="_blank" class="product-link">
-          rcscheckin.com
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="product-card">
-        <div class="product-card-icon">💬</div>
-        <div class="product-card-name">RCS Check-in</div>
-        <span class="product-card-url">rcscheckin.com</span>
-        <ul class="feature-list">
-          <li>Automatización del check-in por WhatsApp con IA</li>
-          <li>Chatbot multilingüe en 6 idiomas (ES, EN, DE, FR, IT, NL)</li>
-          <li>Envío automático del código de cerradura a la hora de llegada</li>
-          <li>Sincronización con Beds24, AvaiBook y Smoobu</li>
-          <li>Solicitud automática de reseñas post-estancia</li>
-          <li>Gestión multi-propiedad desde un panel único</li>
+<section id="services" class="two-ways">
+  <div class="wrap">
+    <div class="section-label" data-i18n="services_label">Dos formas de ayudarte</div>
+    <h2 class="h2" data-i18n="services_title">Elige cómo quieres trabajar con nosotros</h2>
+    <p class="lede" data-i18n="services_lede">Ya sea que quieras delegarlo todo o quieras seguir al mando y automatizar lo repetitivo, tenemos un modelo pensado para ti.</p>
+
+    <div class="two-grid">
+      <div class="service-card pm">
+        <div class="service-icon">🏠</div>
+        <div class="service-eyebrow" data-i18n="pm_eyebrow">Gestión de Propiedad</div>
+        <div class="service-title" data-i18n="pm_title">Deja que gestionemos tu propiedad</div>
+        <p class="service-copy" data-i18n="pm_copy">Nos encargamos del día a día de tu alquiler vacacional para que tú no tengas que hacerlo. Actuamos como tu cohost.</p>
+        <ul class="service-list" data-i18n-html="pm_list">
+          <li>Gestión Airbnb y Booking.com</li>
+          <li>Comunicación con huéspedes</li>
+          <li>Gestión de reservas</li>
+          <li>Precio dinámico</li>
+          <li>Check-in y check-out</li>
+          <li>Coordinación de limpieza</li>
+          <li>Coordinación de mantenimiento</li>
+          <li>Registro de viajeros</li>
+          <li>Experiencia del huésped</li>
+          <li>Reporting al propietario</li>
         </ul>
-        <div class="product-badges">
-          <span class="product-badge">Beds24</span>
-          <span class="product-badge">AvaiBook</span>
-          <span class="product-badge">Smoobu</span>
-          <span class="product-badge">WhatsApp</span>
-          <span class="product-badge">Claude AI</span>
+        <div class="service-price-row">
+          <div class="service-price">15%</div>
+          <div class="service-price-note" data-i18n="pm_price_note">de comisión de gestión</div>
         </div>
+        <p class="service-fine" data-i18n="pm_fine">Gestión completa desde el 15% de los ingresos por alojamiento. Impuestos, fianzas y gastos repercutibles quedan excluidos de la comisión.</p>
+        <a href="#contact" class="btn-primary service-cta" data-i18n="pm_cta">Solicitar Gestión</a>
+      </div>
+
+      <div class="service-card auto">
+        <div class="service-icon">⚙️</div>
+        <div class="service-eyebrow" data-i18n="auto_eyebrow">Automatización de Alquiler</div>
+        <div class="service-title" data-i18n="auto_title">Automatiza tu alquiler vacacional</div>
+        <p class="service-copy" data-i18n="auto_copy">Mantén el control de tu propiedad mientras automatizamos el trabajo repetitivo detrás de tu operación.</p>
+        <ul class="service-list" data-i18n-html="auto_list">
+          <li>Channel Manager</li>
+          <li>Sincronización Airbnb / Booking.com</li>
+          <li>Precio dinámico inteligente</li>
+          <li>Comunicación con IA</li>
+          <li>Check-in automatizado</li>
+          <li>Registro de huéspedes online</li>
+          <li>Cobro de fianza</li>
+          <li>Gestión de tasa turística</li>
+          <li>Verificación automática de huéspedes</li>
+          <li>Instrucciones digitales</li>
+          <li>Flujos de limpieza y mantenimiento</li>
+          <li>Panel de propietario</li>
+        </ul>
+        <div class="service-price-row">
+          <div class="service-price">499€</div>
+          <div class="service-price-note" data-i18n="auto_price_note">setup único</div>
+        </div>
+        <p class="service-fine" data-i18n="auto_fine">Implementación y configuración completa de tu sistema de automatización. Soporte continuo opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.</p>
+        <a href="#contact" class="btn-primary service-cta" data-i18n="auto_cta">Automatizar mi Alquiler</a>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="section-divider"></div>
+<section id="process" class="process-section">
+  <div class="wrap">
+    <div class="section-label" data-i18n="process_label">Cómo funciona</div>
+    <h2 class="h2" data-i18n="process_title">De la reserva al check-in — automatizado</h2>
+    <p class="lede" data-i18n="process_lede">Así es como el flujo de un huésped se mueve por el sistema, de principio a fin.</p>
+    <div class="process-steps" id="processSteps"></div>
+  </div>
+</section>
 
-  <div class="about-strip">
-    <div class="about-item">
-      <span class="about-item-icon">🇫🇮</span>
-      <div class="about-item-title">Empresa finlandesa</div>
-      <p class="about-item-text">Fundada en Helsinki por un gestor de alquiler vacacional que conoce el sector desde dentro.</p>
+<section id="ai" class="feature-section">
+  <div class="wrap">
+    <div class="section-label" data-i18n="ai_label">Inteligencia Artificial</div>
+    <h2 class="h2" data-i18n="ai_title">La IA que trabaja detrás de escena</h2>
+    <p class="lede" data-i18n="ai_lede">Nuestra IA asiste en la comunicación diaria con huéspedes para que nada se quede sin respuesta.</p>
+    <div class="pill-list" data-i18n-html="ai_pills">
+      <span class="pill">Preguntas de huéspedes</span>
+      <span class="pill">Instrucciones de check-in</span>
+      <span class="pill">FAQs</span>
+      <span class="pill">Comunicación multilingüe</span>
+      <span class="pill">Mensajes rutinarios</span>
+      <span class="pill">Seguimiento de reseñas</span>
+      <span class="pill">Notificaciones operativas</span>
+      <span class="pill">Escalado de casos especiales</span>
     </div>
-    <div class="about-item">
-      <span class="about-item-icon">🇪🇺</span>
-      <div class="about-item-title">GDPR & EU Infrastructure</div>
-      <p class="about-item-text">Infraestructura 100% europea. Los datos de tus huéspedes nunca salen de Europa.</p>
-    </div>
-    <div class="about-item">
-      <span class="about-item-icon">⚡</span>
-      <div class="about-item-title">Construido para escalar</div>
-      <p class="about-item-text">Desde una propiedad hasta una cartera completa, sin aumentar la carga operativa.</p>
+    <div class="note-box" data-i18n="ai_note">La IA gestiona la comunicación rutinaria, mientras que las situaciones inusuales o importantes pueden escalarse a una persona.</div>
+  </div>
+</section>
+
+<section id="smart-pricing" class="feature-section">
+  <div class="wrap">
+    <div class="section-label" data-i18n="sp_label">Precio Dinámico</div>
+    <h2 class="h2" data-i18n="sp_title">Precios inteligentes</h2>
+    <p class="lede" data-i18n="sp_desc">Conectamos tu alquiler a herramientas de revenue management que analizan continuamente demanda, estacionalidad, ocupación, condiciones del mercado y patrones de reserva para ayudar a optimizar la tarifa por noche.</p>
+    <p class="lede" style="margin-top:0.8rem" data-i18n="sp_desc2">El precio dinámico puede ajustar automáticamente las tarifas en todos los canales de reserva conectados.</p>
+    <div class="note-box" data-i18n="sp_note">Herramientas como PriceLabs pueden integrarse según el stack tecnológico elegido. No garantizamos incrementos de ingresos.</div>
+  </div>
+</section>
+
+<section id="channels" class="feature-section alt">
+  <div class="wrap">
+    <div class="section-label" data-i18n="ch_label">Channel Manager</div>
+    <h2 class="h2" data-i18n="ch_title">Un calendario. Todos los canales.</h2>
+    <p class="lede" data-i18n="ch_desc">Sincroniza disponibilidad, reservas y tarifas entre Airbnb, Booking.com y otros canales conectados desde un sistema central.</p>
+    <div class="channel-flow">
+      <div class="flow-box" data-i18n="ch_box1">Airbnb</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box center-box" data-i18n="ch_box2">Channel Manager</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-box" data-i18n-html="ch_box3">Booking.com / Vrbo / Web propia<span class="flow-sub">Todos los canales sincronizados</span></div>
     </div>
   </div>
+</section>
 
-  <section id="contact">
-    <div class="contact-section">
-      <div class="section-label">Contacto</div>
-      <h2 class="contact-title">Hablemos</h2>
-      <p class="contact-desc">
-        ¿Tienes alguna pregunta sobre nuestros productos o quieres explorar una colaboración? Escríbenos por email o WhatsApp, respondemos en menos de 24 horas.
-      </p>
+<section id="compliance" class="feature-section">
+  <div class="wrap center" style="max-width:760px">
+    <div class="section-label" data-i18n="cp_label">Cumplimiento del Huésped</div>
+    <h2 class="h2" data-i18n="cp_title">Flujo automatizado de cumplimiento</h2>
+    <p class="lede center" data-i18n="cp_desc">Podemos configurar flujos para el registro de viajeros, fianzas y tasa turística donde esté soportado y sea legalmente aplicable.</p>
+    <div class="compliance-flow" id="complianceFlow"></div>
+    <p class="disclaimer" data-i18n="cp_disclaimer">Los requisitos locales de registro, impuestos y reporting varían según el destino. La responsabilidad legal final está sujeta a la normativa local aplicable y a las obligaciones del propietario.</p>
+  </div>
+</section>
 
-      <div class="contact-grid">
-        <a href="mailto:rentalconnectsolutions@gmail.com" class="contact-card">
-          <div class="contact-card-icon">✉️</div>
-          <div class="contact-card-label">Email</div>
-          <div class="contact-card-value">rentalconnectsolutions@gmail.com</div>
-        </a>
+<section id="deposit" class="feature-section alt">
+  <div class="wrap center" style="max-width:640px">
+    <div class="section-label" data-i18n="dep_label">Fianza</div>
+    <h2 class="h2" data-i18n="dep_title">Fianza de seguridad</h2>
+    <p class="lede center" data-i18n="dep_desc">Cobramos una fianza antes del check-in y automatizamos el flujo de verificación y liberación. El proceso de reembolso depende del sistema de pago utilizado.</p>
+  </div>
+</section>
 
-        <a href="https://wa.me/34654610642" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card-icon">💬</div>
-          <div class="contact-card-label">WhatsApp</div>
-          <div class="contact-card-value">+34 654 610 642</div>
-          <div class="contact-card-sub">también +358 45 224 2760</div>
-        </a>
+<section id="technology" class="tech-section">
+  <div class="wrap">
+    <div class="section-label" data-i18n="tech_label">Nuestra Tecnología</div>
+    <h2 class="h2" data-i18n="tech_title">El ecosistema Rental Connect Solutions</h2>
+    <p class="lede" data-i18n="tech_lede">Nuestras herramientas propias forman parte del mismo ecosistema, diseñadas para trabajar juntas.</p>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-icon">💬</div>
+        <span class="tech-tag">RCS Check-in</span>
+        <div class="tech-name">RCS Check-in</div>
+        <p class="tech-desc" data-i18n="tech_rcs_desc">Flujo digital de check-in y acceso del huésped diseñado para reducir el trabajo manual y simplificar las llegadas.</p>
+        <a href="https://rcscheckin.com" target="_blank" rel="noopener" class="tech-link">rcscheckin.com</a>
       </div>
-
-      <div class="contact-address">
-        <span class="contact-address-icon">📍</span>
-        Telttakuja 3D, 00770 Helsinki, Finland
+      <div class="tech-card">
+        <div class="tech-card-icon">📈</div>
+        <span class="tech-tag">TopMyBnb</span>
+        <div class="tech-name">TopMyBnb</div>
+        <p class="tech-desc" data-i18n="tech_topmybnb_desc">Herramientas con IA para analizar y mejorar anuncios de alquiler vacacional y ayudar a optimizar tu presencia online.</p>
       </div>
     </div>
-  </section>
+    <div class="category-row" data-i18n-html="tech_categories">
+      <span class="category-chip">IA</span>
+      <span class="category-chip">Precio Dinámico</span>
+      <span class="category-chip">Channel Management</span>
+      <span class="category-chip">Experiencia del Huésped</span>
+      <span class="category-chip">Reservas Directas</span>
+      <span class="category-chip">Automatización</span>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-left">
-      <strong>Rental Connect Solutions Tmi</strong> · Telttakuja 3D, 00770 Helsinki · © 2026
+<section id="who" class="who-section">
+  <div class="wrap">
+    <div class="section-label" data-i18n="who_label">¿Para quién es esto?</div>
+    <h2 class="h2" data-i18n="who_title">Encuentra tu perfil</h2>
+    <div class="who-grid" id="whoGrid"></div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+  <div class="wrap">
+    <div class="section-label" data-i18n="price_label">Precios</div>
+    <h2 class="h2" data-i18n="price_title">Un modelo claro, sin sorpresas</h2>
+    <p class="lede" data-i18n="price_lede">Elige gestión completa, automatización, o un plan a medida.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tag" data-i18n="p1_tag">Gestión Completa</div>
+        <div class="price-title" data-i18n="p1_title">Property Management</div>
+        <div class="price-amount">15%</div>
+        <span class="price-unit" data-i18n="p1_unit">de los ingresos por alojamiento</span>
+        <ul class="price-list" data-i18n-html="p1_list">
+          <li>Gestión del anuncio</li>
+          <li>Comunicación con huéspedes</li>
+          <li>Precio dinámico</li>
+          <li>Gestión de reservas</li>
+          <li>Check-in / check-out</li>
+          <li>Registro de viajeros</li>
+          <li>Coordinación de limpieza</li>
+          <li>Coordinación de mantenimiento</li>
+          <li>Reporting al propietario</li>
+        </ul>
+        <a href="#contact" class="btn-outline price-cta" data-i18n="p1_cta">Solicitar Gestión</a>
+      </div>
+      <div class="price-card highlight">
+        <div class="price-tag" data-i18n="p2_tag">Más Elegido</div>
+        <div class="price-title" data-i18n="p2_title">Rental Automation</div>
+        <div class="price-amount">499€</div>
+        <span class="price-unit" data-i18n="p2_unit">setup único</span>
+        <ul class="price-list" data-i18n-html="p2_list">
+          <li>Configuración de Channel Manager</li>
+          <li>Sincronización de reservas</li>
+          <li>Setup de precio dinámico</li>
+          <li>Comunicación con IA</li>
+          <li>Flujos automatizados de huéspedes</li>
+          <li>Flujo de fianza</li>
+          <li>Flujo de tasa turística (donde aplique)</li>
+          <li>Automatización de check-in</li>
+          <li>Pruebas del sistema y formación</li>
+        </ul>
+        <p class="price-extra" data-i18n="p2_extra">Soporte opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.</p>
+        <a href="#contact" class="btn-primary price-cta" data-i18n="p2_cta">Automatizar mi Alquiler</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tag" data-i18n="p3_tag">A Medida</div>
+        <div class="price-title" data-i18n="p3_title">Custom Automation</div>
+        <div class="price-amount" data-i18n="p3_amount">Desde 799€</div>
+        <span class="price-unit" data-i18n="p3_unit">proyecto a medida</span>
+        <p class="lede" style="margin-bottom:1.5rem" data-i18n="p3_desc">Para propietarios con necesidades más complejas, varias propiedades o integraciones personalizadas.</p>
+        <a href="#contact" class="btn-outline price-cta" data-i18n="p3_cta">Hablemos</a>
+      </div>
     </div>
-    <div class="footer-right">
-      <span class="footer-tag green">GDPR Compliant</span>
-      <span class="footer-tag green">EU Infrastructure</span>
-      <span class="footer-tag">🇫🇮 Finland</span>
+  </div>
+</section>
+
+<section id="why" class="why-section">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <div class="section-label" data-i18n="why_label">Por qué nosotros</div>
+        <h2 class="h2" data-i18n="why_title">La tecnología sola no es suficiente</h2>
+        <p class="lede" style="margin-top:1rem" data-i18n="why_desc">Combinamos experiencia real en operaciones de alquiler vacacional con automatización y tecnología. Eso significa que no solo instalamos software: diseñamos el flujo de trabajo alrededor de cómo funciona realmente tu propiedad.</p>
+      </div>
+      <ul class="highlight-list" data-i18n-html="why_list">
+        <li>Experiencia real en alquiler vacacional</li>
+        <li>Enfoque automatización-primero</li>
+        <li>Experiencia del huésped asistida por IA</li>
+        <li>Optimización de ingresos</li>
+        <li>Conocimiento operativo local</li>
+        <li>Sistemas escalables</li>
+        <li>Soporte humano cuando lo necesitas</li>
+      </ul>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section id="about" class="about-strip">
+  <div class="wrap">
+    <div class="section-label" data-i18n="about_label">Sobre nosotros</div>
+    <h2 class="h2" data-i18n="about_title">Una empresa tecnológica de alquiler vacacional</h2>
+    <p class="lede" style="margin-top:1rem" data-i18n="about_desc">Rental Connect Solutions es una empresa de gestión y automatización de alquileres a corto plazo, fundada en Helsinki por un gestor de alquiler vacacional que conoce el sector desde dentro. Ayudamos a propietarios a gestionar sus propiedades profesionalmente, automatizar tareas repetitivas, mejorar la experiencia del huésped y crear operaciones de alquiler más eficientes.</p>
+    <div class="about-grid">
+      <div class="about-item">
+        <span class="about-item-icon">🇫🇮</span>
+        <div class="about-item-title" data-i18n="about_1_title">Empresa finlandesa</div>
+        <p class="about-item-text" data-i18n="about_1_text">Fundada en Helsinki por alguien que gestiona alquileres vacacionales desde dentro.</p>
+      </div>
+      <div class="about-item">
+        <span class="about-item-icon">🇪🇺</span>
+        <div class="about-item-title" data-i18n="about_2_title">GDPR e infraestructura UE</div>
+        <p class="about-item-text" data-i18n="about_2_text">Infraestructura europea. Los datos de tus huéspedes no salen de Europa.</p>
+      </div>
+      <div class="about-item">
+        <span class="about-item-icon">⚡</span>
+        <div class="about-item-title" data-i18n="about_3_title">Construido para escalar</div>
+        <p class="about-item-text" data-i18n="about_3_text">Desde una propiedad hasta una cartera completa, sin aumentar la carga operativa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq-section">
+  <div class="wrap" style="max-width:760px">
+    <div class="section-label" data-i18n="faq_label">Preguntas frecuentes</div>
+    <h2 class="h2" data-i18n="faq_title">Resolvemos tus dudas</h2>
+    <div id="faqList" style="margin-top:2rem"></div>
+  </div>
+</section>
+
+<section id="assessment" class="form-section">
+  <div class="wrap">
+    <div class="section-label" style="color:var(--turquoise)" data-i18n="assess_label">Evaluación gratuita</div>
+    <h2 class="h2" style="color:var(--white)" data-i18n="assess_title">Veamos qué podemos automatizar</h2>
+    <p class="lede" style="color:rgba(255,255,255,0.7)" data-i18n="assess_desc">Cuéntanos sobre tu propiedad y te mostramos dónde la automatización puede ahorrarte tiempo.</p>
+
+    <div class="form-card">
+      <form id="assessmentForm">
+        <div class="form-grid">
+          <div class="form-field full">
+            <label data-i18n="assess_q1">¿Dónde está tu propiedad?</label>
+            <input type="text" name="location" required />
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q2">¿Cuántas propiedades tienes?</label>
+            <input type="number" name="num_properties" min="1" required />
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q3">Plataformas que utilizas</label>
+            <input type="text" name="platforms" data-i18n-placeholder="assess_q3_ph" placeholder="Airbnb, Booking.com, Vrbo, directas, otra..." />
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q4">¿Usas actualmente un channel manager?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="channel_manager" value="si" required /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="channel_manager" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q5">¿Usas precio dinámico?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="dynamic_pricing" value="si" required /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="dynamic_pricing" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q6">¿Gestionas tú mismo la comunicación con huéspedes?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="guest_comm" value="si" required /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="guest_comm" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q7">¿Automatizas actualmente el check-in?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="auto_checkin" value="si" required /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="auto_checkin" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q8">¿Cobras fianza de seguridad?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="deposit" value="si" required /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="deposit" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="assess_q9">¿Cobras tasa turística?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="tourist_tax" value="si" required /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="tourist_tax" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label data-i18n="assess_q10">¿Cuál es tu mayor problema operativo?</label>
+            <textarea name="problem" rows="3"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary form-submit" data-i18n="assess_submit">Enviar evaluación</button>
+      </form>
+      <div class="form-thanks" id="assessThanks" data-i18n="assess_thanks">Gracias. Revisaremos tu configuración y te mostraremos dónde la automatización puede ahorrarte tiempo y mejorar tu operación.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="form-section" style="background:var(--sand-light)">
+  <div class="wrap">
+    <div class="section-label" data-i18n="contact_label">Contacto</div>
+    <h2 class="h2" data-i18n="contact_title">Hablemos</h2>
+    <p class="lede" data-i18n="contact_desc">¿Tienes alguna pregunta sobre nuestros servicios? Escríbenos por email, WhatsApp, o rellena el formulario. Respondemos en menos de 24 horas.</p>
+
+    <div class="two-grid" style="margin-top:2rem; margin-bottom:0.5rem">
+      <a href="mailto:rentalconnectsolutions@gmail.com" class="tech-card" style="text-decoration:none">
+        <div class="tech-card-icon">✉️</div>
+        <span class="tech-tag" data-i18n="contact_email_label">Email</span>
+        <div class="tech-name" style="font-size:1rem">rentalconnectsolutions@gmail.com</div>
+      </a>
+      <a href="https://wa.me/34654610642" target="_blank" rel="noopener" class="tech-card" style="text-decoration:none">
+        <div class="tech-card-icon">💬</div>
+        <span class="tech-tag" data-i18n="contact_wa_label">WhatsApp</span>
+        <div class="tech-name" style="font-size:1rem">+34 654 610 642</div>
+        <p class="tech-desc" style="margin:0.3rem 0 0" data-i18n="contact_wa_sub">también +358 45 224 2760</p>
+      </a>
+    </div>
+
+    <div class="form-card">
+      <form id="contactForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label data-i18n="contact_name">Nombre</label>
+            <input type="text" name="name" required />
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_email">Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_phone">Teléfono / WhatsApp</label>
+            <input type="text" name="phone" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_location">Ubicación de la propiedad</label>
+            <input type="text" name="location" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_numprops">Número de propiedades</label>
+            <input type="number" name="num_properties" min="1" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_platforms">Plataformas actuales</label>
+            <input type="text" name="platforms" />
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_needmgmt">¿Necesitas gestión completa?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="need_management" value="si" /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="need_management" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label data-i18n="contact_wantauto">¿Quieres automatización?</label>
+            <div class="radio-row">
+              <label><input type="radio" name="want_automation" value="si" /> <span data-i18n="opt_yes">Sí</span></label>
+              <label><input type="radio" name="want_automation" value="no" /> <span data-i18n="opt_no">No</span></label>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label data-i18n="contact_message">Mensaje</label>
+            <textarea name="message" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="privacyConsent" required />
+          <label for="privacyConsent" data-i18n="contact_privacy">He leído y acepto la política de privacidad. Mis datos se usarán únicamente para responder a esta consulta.</label>
+        </div>
+        <button type="submit" class="btn-primary form-submit" data-i18n="contact_submit">Enviar mensaje</button>
+      </form>
+      <div class="form-thanks" id="contactThanks" data-i18n="contact_thanks">Gracias por tu mensaje. Te responderemos en menos de 24 horas.</div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2 data-i18n="final_title">¿Listo para hacer tu alquiler más inteligente?</h2>
+    <p data-i18n="final_desc">Ya sea que necesites gestión completa o simplemente quieras automatizar tu operación actual, te ayudamos a construir un sistema que funciona.</p>
+    <div class="final-actions">
+      <a href="#assessment" class="btn-primary" data-i18n="final_cta1">Evaluación Gratuita</a>
+      <a href="#contact" class="btn-outline" data-i18n="final_cta2">Automatizar mi Alquiler</a>
+      <a href="#contact" class="btn-outline" data-i18n="final_cta3">Solicitar Gestión</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <strong>Rental Connect Solutions Tmi</strong> · Telttakuja 3D, 00770 Helsinki · © 2026
+  </div>
+  <div class="footer-right">
+    <span class="footer-tag green">GDPR Compliant</span>
+    <span class="footer-tag green">EU Infrastructure</span>
+    <span class="footer-tag">🇫🇮 Finland</span>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="#assessment" data-i18n="sticky_cta">Evaluación Gratuita</a>
+</div>
+
+<script>
+(function(){
+  var T = {
+    es: {
+      meta_title: "Rental Connect Solutions | Gestión y Automatización de Alquileres Vacacionales",
+      meta_desc: "Gestión profesional de alquileres vacacionales (Airbnb, Booking.com) como cohost y automatización con IA: check-in automático, precios dinámicos, channel manager y más.",
+      nav_services: "Servicios", nav_process: "Automatización", nav_tech: "Tecnología", nav_pricing: "Precios", nav_contact: "Contacto", nav_cta: "Evaluación gratis",
+      hero_badge: "Cohosting y automatización de alquileres vacacionales",
+      hero_title: "Gestionamos tu <em>Airbnb</em> como cohost, o automatizamos tu alquiler vacacional",
+      hero_sub: "Gestión profesional y automatización inteligente para Airbnb, Booking.com y alquileres vacacionales.",
+      hero_desc: "Desde la comunicación con huéspedes y el precio dinámico hasta el check-in, el registro de viajeros, la limpieza y el mantenimiento: construimos sistemas que hacen tu alquiler más fácil de operar y más rentable.",
+      hero_cta1: "Evaluación Gratuita de tu Propiedad", hero_cta2: "Ver Nuestros Servicios",
+      hero_tag1: "🏠 Cohosting Airbnb", hero_tag2: "⚙️ Automatización con IA", hero_tag3: "🇪🇺 Infraestructura Europea / GDPR",
+      services_label: "Dos formas de ayudarte", services_title: "Elige cómo quieres trabajar con nosotros",
+      services_lede: "Ya sea que quieras delegarlo todo o quieras seguir al mando y automatizar lo repetitivo, tenemos un modelo pensado para ti.",
+      pm_eyebrow: "Gestión de Propiedad", pm_title: "Deja que gestionemos tu propiedad",
+      pm_copy: "Nos encargamos del día a día de tu alquiler vacacional para que tú no tengas que hacerlo. Actuamos como tu cohost.",
+      pm_list: "<li>Gestión Airbnb y Booking.com</li><li>Comunicación con huéspedes</li><li>Gestión de reservas</li><li>Precio dinámico</li><li>Check-in y check-out</li><li>Coordinación de limpieza</li><li>Coordinación de mantenimiento</li><li>Registro de viajeros</li><li>Experiencia del huésped</li><li>Reporting al propietario</li>",
+      pm_price_note: "de comisión de gestión",
+      pm_fine: "Gestión completa desde el 15% de los ingresos por alojamiento. Impuestos, fianzas y gastos repercutibles quedan excluidos de la comisión.",
+      pm_cta: "Solicitar Gestión",
+      auto_eyebrow: "Automatización de Alquiler", auto_title: "Automatiza tu alquiler vacacional",
+      auto_copy: "Mantén el control de tu propiedad mientras automatizamos el trabajo repetitivo detrás de tu operación.",
+      auto_list: "<li>Channel Manager</li><li>Sincronización Airbnb / Booking.com</li><li>Precio dinámico inteligente</li><li>Comunicación con IA</li><li>Check-in automatizado</li><li>Registro de huéspedes online</li><li>Cobro de fianza</li><li>Gestión de tasa turística</li><li>Verificación automática de huéspedes</li><li>Instrucciones digitales</li><li>Flujos de limpieza y mantenimiento</li><li>Panel de propietario</li>",
+      auto_price_note: "setup único",
+      auto_fine: "Implementación y configuración completa de tu sistema de automatización. Soporte continuo opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.",
+      auto_cta: "Automatizar mi Alquiler",
+      process_label: "Cómo funciona", process_title: "De la reserva al check-in — automatizado",
+      process_lede: "Así es como el flujo de un huésped se mueve por el sistema, de principio a fin.",
+      ai_label: "Inteligencia Artificial", ai_title: "La IA que trabaja detrás de escena",
+      ai_lede: "Nuestra IA asiste en la comunicación diaria con huéspedes para que nada se quede sin respuesta.",
+      ai_pills: "<span class='pill'>Preguntas de huéspedes</span><span class='pill'>Instrucciones de check-in</span><span class='pill'>FAQs</span><span class='pill'>Comunicación multilingüe</span><span class='pill'>Mensajes rutinarios</span><span class='pill'>Seguimiento de reseñas</span><span class='pill'>Notificaciones operativas</span><span class='pill'>Escalado de casos especiales</span>",
+      ai_note: "La IA gestiona la comunicación rutinaria, mientras que las situaciones inusuales o importantes pueden escalarse a una persona.",
+      sp_label: "Precio Dinámico", sp_title: "Precios inteligentes",
+      sp_desc: "Conectamos tu alquiler a herramientas de revenue management que analizan continuamente demanda, estacionalidad, ocupación, condiciones del mercado y patrones de reserva para ayudar a optimizar la tarifa por noche.",
+      sp_desc2: "El precio dinámico puede ajustar automáticamente las tarifas en todos los canales de reserva conectados.",
+      sp_note: "Herramientas como PriceLabs pueden integrarse según el stack tecnológico elegido. No garantizamos incrementos de ingresos.",
+      ch_label: "Channel Manager", ch_title: "Un calendario. Todos los canales.",
+      ch_desc: "Sincroniza disponibilidad, reservas y tarifas entre Airbnb, Booking.com y otros canales conectados desde un sistema central.",
+      ch_box1: "Airbnb", ch_box2: "Channel Manager",
+      ch_box3: "Booking.com / Vrbo / Web propia<span class='flow-sub'>Todos los canales sincronizados</span>",
+      cp_label: "Cumplimiento del Huésped", cp_title: "Flujo automatizado de cumplimiento",
+      cp_desc: "Podemos configurar flujos para el registro de viajeros, fianzas y tasa turística donde esté soportado y sea legalmente aplicable.",
+      cp_disclaimer: "Los requisitos locales de registro, impuestos y reporting varían según el destino. La responsabilidad legal final está sujeta a la normativa local aplicable y a las obligaciones del propietario.",
+      dep_label: "Fianza", dep_title: "Fianza de seguridad",
+      dep_desc: "Cobramos una fianza antes del check-in y automatizamos el flujo de verificación y liberación. El proceso de reembolso depende del sistema de pago utilizado.",
+      tech_label: "Nuestra Tecnología", tech_title: "El ecosistema Rental Connect Solutions",
+      tech_lede: "Nuestras herramientas propias forman parte del mismo ecosistema, diseñadas para trabajar juntas.",
+      tech_rcs_desc: "Flujo digital de check-in y acceso del huésped diseñado para reducir el trabajo manual y simplificar las llegadas.",
+      tech_topmybnb_desc: "Herramientas con IA para analizar y mejorar anuncios de alquiler vacacional y ayudar a optimizar tu presencia online.",
+      tech_categories: "<span class='category-chip'>IA</span><span class='category-chip'>Precio Dinámico</span><span class='category-chip'>Channel Management</span><span class='category-chip'>Experiencia del Huésped</span><span class='category-chip'>Reservas Directas</span><span class='category-chip'>Automatización</span>",
+      who_label: "¿Para quién es esto?", who_title: "Encuentra tu perfil",
+      price_label: "Precios", price_title: "Un modelo claro, sin sorpresas",
+      price_lede: "Elige gestión completa, automatización, o un plan a medida.",
+      p1_tag: "Gestión Completa", p1_title: "Property Management", p1_unit: "de los ingresos por alojamiento",
+      p1_list: "<li>Gestión del anuncio</li><li>Comunicación con huéspedes</li><li>Precio dinámico</li><li>Gestión de reservas</li><li>Check-in / check-out</li><li>Registro de viajeros</li><li>Coordinación de limpieza</li><li>Coordinación de mantenimiento</li><li>Reporting al propietario</li>",
+      p1_cta: "Solicitar Gestión",
+      p2_tag: "Más Elegido", p2_title: "Rental Automation", p2_unit: "setup único",
+      p2_list: "<li>Configuración de Channel Manager</li><li>Sincronización de reservas</li><li>Setup de precio dinámico</li><li>Comunicación con IA</li><li>Flujos automatizados de huéspedes</li><li>Flujo de fianza</li><li>Flujo de tasa turística (donde aplique)</li><li>Automatización de check-in</li><li>Pruebas del sistema y formación</li>",
+      p2_extra: "Soporte opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.",
+      p2_cta: "Automatizar mi Alquiler",
+      p3_tag: "A Medida", p3_title: "Custom Automation", p3_amount: "Desde 799€", p3_unit: "proyecto a medida",
+      p3_desc: "Para propietarios con necesidades más complejas, varias propiedades o integraciones personalizadas.",
+      p3_cta: "Hablemos",
+      why_label: "Por qué nosotros", why_title: "La tecnología sola no es suficiente",
+      why_desc: "Combinamos experiencia real en operaciones de alquiler vacacional con automatización y tecnología. Eso significa que no solo instalamos software: diseñamos el flujo de trabajo alrededor de cómo funciona realmente tu propiedad.",
+      why_list: "<li>Experiencia real en alquiler vacacional</li><li>Enfoque automatización-primero</li><li>Experiencia del huésped asistida por IA</li><li>Optimización de ingresos</li><li>Conocimiento operativo local</li><li>Sistemas escalables</li><li>Soporte humano cuando lo necesitas</li>",
+      about_label: "Sobre nosotros", about_title: "Una empresa tecnológica de alquiler vacacional",
+      about_desc: "Rental Connect Solutions es una empresa de gestión y automatización de alquileres a corto plazo, fundada en Helsinki por un gestor de alquiler vacacional que conoce el sector desde dentro. Ayudamos a propietarios a gestionar sus propiedades profesionalmente, automatizar tareas repetitivas, mejorar la experiencia del huésped y crear operaciones de alquiler más eficientes.",
+      about_1_title: "Empresa finlandesa", about_1_text: "Fundada en Helsinki por alguien que gestiona alquileres vacacionales desde dentro.",
+      about_2_title: "GDPR e infraestructura UE", about_2_text: "Infraestructura europea. Los datos de tus huéspedes no salen de Europa.",
+      about_3_title: "Construido para escalar", about_3_text: "Desde una propiedad hasta una cartera completa, sin aumentar la carga operativa.",
+      faq_label: "Preguntas frecuentes", faq_title: "Resolvemos tus dudas",
+      assess_label: "Evaluación gratuita", assess_title: "Veamos qué podemos automatizar",
+      assess_desc: "Cuéntanos sobre tu propiedad y te mostramos dónde la automatización puede ahorrarte tiempo.",
+      assess_q1: "¿Dónde está tu propiedad?", assess_q2: "¿Cuántas propiedades tienes?", assess_q3: "Plataformas que utilizas",
+      assess_q3_ph: "Airbnb, Booking.com, Vrbo, directas, otra...",
+      assess_q4: "¿Usas actualmente un channel manager?", assess_q5: "¿Usas precio dinámico?",
+      assess_q6: "¿Gestionas tú mismo la comunicación con huéspedes?", assess_q7: "¿Automatizas actualmente el check-in?",
+      assess_q8: "¿Cobras fianza de seguridad?", assess_q9: "¿Cobras tasa turística?",
+      assess_q10: "¿Cuál es tu mayor problema operativo?", assess_submit: "Enviar evaluación",
+      assess_thanks: "Gracias. Revisaremos tu configuración y te mostraremos dónde la automatización puede ahorrarte tiempo y mejorar tu operación.",
+      opt_yes: "Sí", opt_no: "No",
+      contact_label: "Contacto", contact_title: "Hablemos",
+      contact_desc: "¿Tienes alguna pregunta sobre nuestros servicios? Escríbenos por email, WhatsApp, o rellena el formulario. Respondemos en menos de 24 horas.",
+      contact_email_label: "Email", contact_wa_label: "WhatsApp", contact_wa_sub: "también +358 45 224 2760",
+      contact_name: "Nombre", contact_email: "Email", contact_phone: "Teléfono / WhatsApp", contact_location: "Ubicación de la propiedad",
+      contact_numprops: "Número de propiedades", contact_platforms: "Plataformas actuales",
+      contact_needmgmt: "¿Necesitas gestión completa?", contact_wantauto: "¿Quieres automatización?", contact_message: "Mensaje",
+      contact_privacy: "He leído y acepto la política de privacidad. Mis datos se usarán únicamente para responder a esta consulta.",
+      contact_submit: "Enviar mensaje", contact_thanks: "Gracias por tu mensaje. Te responderemos en menos de 24 horas.",
+      final_title: "¿Listo para hacer tu alquiler más inteligente?",
+      final_desc: "Ya sea que necesites gestión completa o simplemente quieras automatizar tu operación actual, te ayudamos a construir un sistema que funciona.",
+      final_cta1: "Evaluación Gratuita", final_cta2: "Automatizar mi Alquiler", final_cta3: "Solicitar Gestión",
+      sticky_cta: "Evaluación Gratuita"
+    },
+    en: {
+      meta_title: "Rental Connect Solutions | Short-Term Rental Management & Automation",
+      meta_desc: "Professional Airbnb co-hosting and vacation rental management plus AI-powered automation: automated check-in, dynamic pricing, channel manager and more.",
+      nav_services: "Services", nav_process: "Automation", nav_tech: "Technology", nav_pricing: "Pricing", nav_contact: "Contact", nav_cta: "Free Assessment",
+      hero_badge: "Airbnb co-hosting & vacation rental automation",
+      hero_title: "We manage your <em>Airbnb</em> as your co-host, or automate your vacation rental",
+      hero_sub: "Professional property management and intelligent automation for Airbnb, Booking.com and vacation rentals.",
+      hero_desc: "From guest communication and dynamic pricing to check-in, traveler registration, cleaning and maintenance — we build systems that make short-term rentals easier to operate and more profitable.",
+      hero_cta1: "Get a Free Property Assessment", hero_cta2: "Explore Our Services",
+      hero_tag1: "🏠 Airbnb Co-hosting", hero_tag2: "⚙️ AI-Powered Automation", hero_tag3: "🇪🇺 EU Infrastructure / GDPR",
+      services_label: "Two ways we help", services_title: "Choose how you want to work with us",
+      services_lede: "Whether you want to hand it all over or stay in control and automate the repetitive work, we have a model built for you.",
+      pm_eyebrow: "Property Management", pm_title: "Let us manage your property",
+      pm_copy: "We take care of the day-to-day operation of your short-term rental so you don't have to. We act as your co-host.",
+      pm_list: "<li>Airbnb & Booking.com management</li><li>Guest communication</li><li>Booking management</li><li>Dynamic pricing</li><li>Check-in & check-out</li><li>Cleaning coordination</li><li>Maintenance coordination</li><li>Traveler registration</li><li>Guest experience</li><li>Owner reporting</li>",
+      pm_price_note: "management fee",
+      pm_fine: "Full-service management from 15% of accommodation revenue. Taxes, security deposits and pass-through expenses are excluded from the commission.",
+      pm_cta: "Request Property Management",
+      auto_eyebrow: "Rental Automation", auto_title: "Automate your short-term rental",
+      auto_copy: "Keep control of your property while we automate the repetitive work behind your rental operation.",
+      auto_list: "<li>Channel Manager</li><li>Airbnb / Booking.com synchronization</li><li>Intelligent dynamic pricing</li><li>AI-powered guest communication</li><li>Automated check-in</li><li>Online guest registration</li><li>Security deposit collection</li><li>Tourist tax workflows</li><li>Automatic guest verification</li><li>Digital guest instructions</li><li>Cleaning & maintenance workflows</li><li>Owner dashboard</li>",
+      auto_price_note: "one-time setup",
+      auto_fine: "Complete implementation and configuration of your rental automation system. Optional ongoing support from €49/month. Third-party software subscriptions may be billed separately.",
+      auto_cta: "Automate My Rental",
+      process_label: "How it works", process_title: "From Booking to Check-In — Automated",
+      process_lede: "This is how a guest's journey moves through the system, start to finish.",
+      ai_label: "Artificial Intelligence", ai_title: "AI That Works Behind the Scenes",
+      ai_lede: "Our AI assists with everyday guest communication so nothing goes unanswered.",
+      ai_pills: "<span class='pill'>Guest questions</span><span class='pill'>Check-in instructions</span><span class='pill'>FAQs</span><span class='pill'>Multilingual communication</span><span class='pill'>Routine guest messages</span><span class='pill'>Review follow-ups</span><span class='pill'>Operational notifications</span><span class='pill'>Escalation of unusual requests</span>",
+      ai_note: "AI handles routine communication while important or unusual situations can be escalated to a human.",
+      sp_label: "Dynamic Pricing", sp_title: "Intelligent Pricing",
+      sp_desc: "We connect your rental to intelligent revenue-management tools that continuously analyze demand, seasonality, occupancy, market conditions and booking patterns to help optimize nightly rates.",
+      sp_desc2: "Dynamic pricing can automatically adjust rates across connected booking channels.",
+      sp_note: "Tools such as PriceLabs can be integrated depending on the selected technology stack. We do not promise guaranteed revenue increases.",
+      ch_label: "Channel Manager", ch_title: "One Calendar. Every Channel.",
+      ch_desc: "Synchronize availability, reservations and rates across Airbnb, Booking.com and other connected channels from one central system.",
+      ch_box1: "Airbnb", ch_box2: "Channel Manager",
+      ch_box3: "Booking.com / Vrbo / Direct Website<span class='flow-sub'>All channels synchronized</span>",
+      cp_label: "Guest Compliance", cp_title: "Automated Guest Compliance Workflow",
+      cp_desc: "We can configure workflows for traveler registration, security deposits and tourist-tax collection where supported and legally applicable.",
+      cp_disclaimer: "Local registration, tax and reporting requirements vary by destination. Final legal responsibility remains subject to the applicable local regulations and the property owner's obligations.",
+      dep_label: "Security Deposit", dep_title: "Security Deposit",
+      dep_desc: "We collect a security deposit before check-in and automate the verification and release workflow. The refund process depends on the payment provider used.",
+      tech_label: "Our Technology", tech_title: "The Rental Connect Solutions Ecosystem",
+      tech_lede: "Our own tools are part of the same ecosystem, designed to work together.",
+      tech_rcs_desc: "Digital check-in and guest access workflow designed to reduce manual work and simplify arrivals.",
+      tech_topmybnb_desc: "AI-powered tools for analyzing and improving short-term rental listings and helping property owners optimize their online presence.",
+      tech_categories: "<span class='category-chip'>AI</span><span class='category-chip'>Dynamic Pricing</span><span class='category-chip'>Channel Management</span><span class='category-chip'>Guest Experience</span><span class='category-chip'>Direct Booking</span><span class='category-chip'>Automation</span>",
+      who_label: "Who is this for?", who_title: "Find your profile",
+      price_label: "Pricing", price_title: "A clear model, no surprises",
+      price_lede: "Choose full management, automation, or a custom plan.",
+      p1_tag: "Full Management", p1_title: "Property Management", p1_unit: "of accommodation revenue",
+      p1_list: "<li>Listing management</li><li>Guest communication</li><li>Dynamic pricing</li><li>Booking management</li><li>Check-in / check-out</li><li>Traveler registration workflows</li><li>Cleaning coordination</li><li>Maintenance coordination</li><li>Owner reporting</li>",
+      p1_cta: "Request Management",
+      p2_tag: "Most Popular", p2_title: "Rental Automation", p2_unit: "one-time setup",
+      p2_list: "<li>Channel Manager setup</li><li>Booking synchronization</li><li>Dynamic pricing setup</li><li>AI guest communication setup</li><li>Automated guest workflows</li><li>Security deposit workflow</li><li>Tourist tax workflow where applicable</li><li>Check-in automation</li><li>System testing & owner training</li>",
+      p2_extra: "Optional support from €49/month. Third-party software and platform subscription fees may apply separately.",
+      p2_cta: "Automate My Rental",
+      p3_tag: "Custom", p3_title: "Custom Automation", p3_amount: "From €799", p3_unit: "custom project",
+      p3_desc: "For owners with more complex requirements, multiple properties or custom integrations.",
+      p3_cta: "Talk to Us",
+      why_label: "Why us", why_title: "Technology Alone Isn't Enough",
+      why_desc: "We combine real short-term rental operations experience with automation and technology. That means we don't just install software — we design the workflow around the way your property actually operates.",
+      why_list: "<li>Real-world rental experience</li><li>Automation-first approach</li><li>AI-assisted guest experience</li><li>Revenue optimization</li><li>Local operational knowledge</li><li>Scalable systems</li><li>Human support when needed</li>",
+      about_label: "About us", about_title: "A technology-driven vacation rental company",
+      about_desc: "Rental Connect Solutions is a technology-driven short-term rental management and automation company, founded in Helsinki by a vacation rental manager who knows the industry from the inside. We help owners manage properties professionally, automate repetitive tasks, improve guest experience and create more efficient rental operations.",
+      about_1_title: "Finnish company", about_1_text: "Founded in Helsinki by someone who manages vacation rentals from the inside.",
+      about_2_title: "GDPR & EU infrastructure", about_2_text: "European infrastructure. Your guests' data never leaves Europe.",
+      about_3_title: "Built to scale", about_3_text: "From one property to a full portfolio, without increasing the operational load.",
+      faq_label: "FAQ", faq_title: "Common questions",
+      assess_label: "Free assessment", assess_title: "Let's see what we can automate",
+      assess_desc: "Tell us about your property and we'll show you where automation could save you time.",
+      assess_q1: "Where is your property?", assess_q2: "How many properties do you have?", assess_q3: "Which platforms do you use?",
+      assess_q3_ph: "Airbnb, Booking.com, Vrbo, direct bookings, other...",
+      assess_q4: "Do you currently use a channel manager?", assess_q5: "Do you currently use dynamic pricing?",
+      assess_q6: "Do you manage guest communication yourself?", assess_q7: "Do you currently automate check-in?",
+      assess_q8: "Do you collect security deposits?", assess_q9: "Do you collect tourist tax?",
+      assess_q10: "What is your biggest operational problem?", assess_submit: "Submit assessment",
+      assess_thanks: "Thank you. We'll review your setup and show you where automation could save time and improve your operation.",
+      opt_yes: "Yes", opt_no: "No",
+      contact_label: "Contact", contact_title: "Let's Talk",
+      contact_desc: "Have a question about our services? Email us, WhatsApp us, or fill out the form. We reply within 24 hours.",
+      contact_email_label: "Email", contact_wa_label: "WhatsApp", contact_wa_sub: "also +358 45 224 2760",
+      contact_name: "Name", contact_email: "Email", contact_phone: "Phone / WhatsApp", contact_location: "Property location",
+      contact_numprops: "Number of properties", contact_platforms: "Current booking platforms",
+      contact_needmgmt: "Do you need full management?", contact_wantauto: "Do you want automation?", contact_message: "Message",
+      contact_privacy: "I have read and accept the privacy policy. My data will only be used to respond to this inquiry.",
+      contact_submit: "Send message", contact_thanks: "Thank you for your message. We'll get back to you within 24 hours.",
+      final_title: "Ready to make your rental smarter?",
+      final_desc: "Whether you need full property management or simply want to automate your current operation, we'll help you build a system that works.",
+      final_cta1: "Get a Free Property Assessment", final_cta2: "Automate My Rental", final_cta3: "Request Property Management",
+      sticky_cta: "Free Assessment"
+    }
+  };
+
+  var PROCESS = {
+    es: [
+      ["El huésped reserva",""], ["La reserva se sincroniza automáticamente",""],
+      ["El huésped recibe instrucciones automáticas",""], ["El huésped completa la información requerida",""],
+      ["Se cobra la fianza de seguridad",""], ["Se cobra la tasa turística cuando aplica",""],
+      ["Se completa el registro de viajeros según requisitos locales",""], ["La IA gestiona la comunicación rutinaria",""],
+      ["El huésped recibe las instrucciones de check-in",""], ["El código de acceso se libera según las reglas configuradas",""],
+      ["El equipo de limpieza es notificado automáticamente",""], ["Las tareas de mantenimiento se asignan automáticamente si es necesario",""],
+      ["El huésped recibe comunicación post-estancia",""], ["El propietario recibe su reporting",""]
+    ],
+    en: [
+      ["Guest books",""], ["Booking is automatically synchronized",""],
+      ["Guest receives automated instructions",""], ["Guest completes required information",""],
+      ["Security deposit is collected",""], ["Tourist tax is collected where applicable",""],
+      ["Traveler registration is completed per local requirements",""], ["AI handles routine guest communication",""],
+      ["Guest receives check-in instructions",""], ["Access code is released per configured rules",""],
+      ["Cleaning team is automatically notified",""], ["Maintenance tasks are auto-assigned when needed",""],
+      ["Guest receives post-stay communication",""], ["Owner receives reporting",""]
+    ]
+  };
+
+  var COMPLIANCE = {
+    es: ["Reserva","Datos del huésped","Fianza de seguridad","Tasa turística","Registro de viajeros","Autorización de check-in","Instrucciones de acceso"],
+    en: ["Booking","Guest details","Security deposit","Tourist tax","Traveler registration","Check-in authorization","Access instructions"]
+  };
+
+  var WHO = {
+    es: [
+      ["🏠","Propietarios","“Quiero que alguien lo gestione todo por mí.”"],
+      ["📱","Anfitriones de Airbnb","“Ya gestiono mi propiedad pero quiero automatizar tareas repetitivas.”"],
+      ["🏘️","Propietarios de varias propiedades","“Necesito sistemas que escalen entre varias propiedades.”"],
+      ["📊","Gestores de propiedades","“Quiero automatizar operaciones y mejorar la eficiencia.”"]
+    ],
+    en: [
+      ["🏠","Property Owners","“I want someone to manage everything for me.”"],
+      ["📱","Airbnb Hosts","“I already manage my property but want to automate repetitive tasks.”"],
+      ["🏘️","Multi-Property Owners","“I need systems that scale across multiple properties.”"],
+      ["📊","Property Managers","“I want to automate operations and improve efficiency.”"]
+    ]
+  };
+
+  var FAQ = {
+    es: [
+      ["¿Qué incluye la comisión de gestión del 15%?","El 15% se aplica sobre los ingresos por alojamiento e incluye la gestión operativa completa. Los impuestos, las fianzas y los gastos repercutibles quedan excluidos de la comisión."],
+      ["¿El setup de automatización de 499€ es un pago único?","Sí, los 499€ cubren la implementación y configuración inicial. El soporte continuo es opcional desde 49€/mes, y las suscripciones a software de terceros pueden facturarse por separado."],
+      ["¿Gestionan el registro de viajeros y la tasa turística en cualquier país?","Configuramos flujos según los requisitos locales aplicables y las integraciones disponibles. Estos requisitos varían según el destino."],
+      ["¿Puedo combinar gestión de propiedad y automatización?","Sí. Muchos propietarios empiezan con automatización y más adelante añaden gestión completa, o al revés, según cómo evoluciona su operación."]
+    ],
+    en: [
+      ["What's included in the 15% management fee?","The 15% applies to accommodation revenue and covers full operational management. Taxes, security deposits and pass-through expenses are excluded from the commission."],
+      ["Is the €499 automation setup a one-time payment?","Yes, the €499 covers initial implementation and configuration. Ongoing support is optional from €49/month, and third-party software subscriptions may be billed separately."],
+      ["Do you handle traveler registration and tourist tax everywhere?","We configure workflows according to the applicable local requirements and available integrations. These requirements vary by destination."],
+      ["Can I combine property management and automation?","Yes. Many owners start with automation and later add full management, or the other way around, as their operation evolves."]
+    ]
+  };
+
+  function buildProcess(lang){
+    var el = document.getElementById('processSteps');
+    el.innerHTML = PROCESS[lang].map(function(s,i){
+      return '<div class="process-step"><div class="process-num">'+(i+1)+'</div><div class="process-title">'+s[0]+'</div></div>';
+    }).join('');
+  }
+  function buildCompliance(lang){
+    var el = document.getElementById('complianceFlow');
+    el.innerHTML = COMPLIANCE[lang].map(function(s,i,arr){
+      var html = '<div class="compliance-node">'+s+'</div>';
+      if(i < arr.length-1) html += '<div class="compliance-arrow">↓</div>';
+      return html;
+    }).join('');
+  }
+  function buildWho(lang){
+    var el = document.getElementById('whoGrid');
+    el.innerHTML = WHO[lang].map(function(w){
+      return '<div class="who-card"><span class="who-icon">'+w[0]+'</span><div class="who-title">'+w[1]+'</div><div class="who-quote">'+w[2]+'</div></div>';
+    }).join('');
+  }
+  function buildFaq(lang){
+    var el = document.getElementById('faqList');
+    el.innerHTML = FAQ[lang].map(function(f){
+      return '<div class="faq-item"><div class="faq-q">'+f[0]+'</div><div class="faq-a">'+f[1]+'</div></div>';
+    }).join('');
+    el.querySelectorAll('.faq-item').forEach(function(item){
+      item.querySelector('.faq-q').addEventListener('click', function(){ item.classList.toggle('open'); });
+    });
+  }
+
+  function applyLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var val = T[lang][el.getAttribute('data-i18n')];
+      if(val != null) el.textContent = val;
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+      var val = T[lang][el.getAttribute('data-i18n-html')];
+      if(val != null) el.innerHTML = val;
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var val = T[lang][el.getAttribute('data-i18n-placeholder')];
+      if(val != null) el.placeholder = val;
+    });
+    document.title = T[lang].meta_title;
+    var md = document.querySelector('meta[name="description"]'); if(md) md.setAttribute('content', T[lang].meta_desc);
+    var ogt = document.querySelector('meta[property="og:title"]'); if(ogt) ogt.setAttribute('content', T[lang].meta_title);
+    var ogd = document.querySelector('meta[property="og:description"]'); if(ogd) ogd.setAttribute('content', T[lang].meta_desc);
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
+    buildProcess(lang); buildCompliance(lang); buildWho(lang); buildFaq(lang);
+    try { localStorage.setItem('rcs_lang', lang); } catch(e){}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyLang(btn.getAttribute('data-lang')); });
+  });
+
+  var initial = 'es';
+  try {
+    var saved = localStorage.getItem('rcs_lang');
+    if(saved) initial = saved;
+    else if(navigator.language && navigator.language.toLowerCase().indexOf('es') !== 0) initial = 'en';
+  } catch(e){}
+  applyLang(initial);
+
+  function mailtoSubmit(formEl, subject, thanksEl){
+    formEl.addEventListener('submit', function(e){
+      e.preventDefault();
+      var lines = [];
+      new FormData(formEl).forEach(function(v,k){ if(v) lines.push(k + ': ' + v); });
+      var body = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:rentalconnectsolutions@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      formEl.style.display = 'none';
+      thanksEl.classList.add('show');
+    });
+  }
+  mailtoSubmit(document.getElementById('assessmentForm'), 'Evaluación gratuita - Rental Connect Solutions', document.getElementById('assessThanks'));
+  mailtoSubmit(document.getElementById('contactForm'), 'Nueva consulta - Rental Connect Solutions', document.getElementById('contactThanks'));
+})();
+</script>
 
 </body>
 </html>
