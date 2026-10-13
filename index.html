@@ -56,7 +56,7 @@
   "serviceType": "Short-Term Rental Automation",
   "provider": { "@type": "Organization", "name": "Rental Connect Solutions" },
   "areaServed": "EU",
-  "description": "Automation setup for short-term rentals: channel manager, AI guest communication, automated check-in, dynamic pricing and guest compliance workflows."
+  "description": "Short-term rental automation with RCS Check-in and free onboarding: channel manager, complete AI automation, Airbnb and Booking.com connection, automated check-in, dynamic pricing and guest compliance workflows."
 }
 </script>
 <script type="application/ld+json">
@@ -66,13 +66,13 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué incluye la comisión de gestión del 15%?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El 15% se aplica sobre los ingresos por alojamiento e incluye la gestión operativa completa. Los impuestos, las fianzas y los gastos repercutibles quedan excluidos de la comisión." }
+      "name": "¿Qué incluye el 15% del servicio de cohost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Cobramos el 15% de cada reserva sobre los ingresos por alojamiento e incluye la gestión operativa completa como tu cohost en Airbnb y Booking.com. Los impuestos, las fianzas y los gastos repercutibles quedan excluidos de la comisión." }
     },
     {
       "@type": "Question",
-      "name": "¿El setup de automatización de 499€ es un pago único?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, los 499€ cubren la implementación y configuración inicial del sistema de automatización. El soporte continuo es opcional desde 49€/mes, y las suscripciones a software de terceros pueden facturarse por separado." }
+      "name": "¿El onboarding de la automatización es realmente gratis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los primeros clientes se incorporan gratis. Solo contratas RCS Check-in, nuestro producto que automatiza por completo tu alquiler vacacional, y nuestro soporte para conectarlo con Airbnb y Booking.com. Las suscripciones a software de terceros pueden facturarse por separado." }
     },
     {
       "@type": "Question",
@@ -187,6 +187,12 @@
   .service-card.pm .service-price-note { color: rgba(255,255,255,0.6); }
   .service-card.auto .service-price-note { color: var(--gray-600); }
   .service-fine { font-size: 0.72rem; margin-bottom: 1.4rem; }
+  .service-price.free, .price-amount.free { color: var(--turquoise); font-size: 2.4rem; letter-spacing: 0.02em; }
+  .service-card.auto .service-price.free { color: var(--turquoise); }
+  .price-was { font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--gray-400); text-decoration: line-through; margin-right: 0.45rem; }
+  .promo-badge { display: inline-block; align-self: flex-start; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: var(--turquoise); color: var(--white); padding: 0.4rem 0.8rem; border-radius: 20px; margin-bottom: 1rem; }
+  .price-card.highlight { position: relative; }
+  .price-card.highlight .promo-badge { position: absolute; top: -0.8rem; left: 50%; transform: translateX(-50%); white-space: nowrap; margin: 0; box-shadow: 0 8px 20px -10px rgba(23,163,152,0.6); }
   .service-card.pm .service-fine { color: rgba(255,255,255,0.55); }
   .service-card.auto .service-fine { color: var(--gray-400); }
   .service-cta { align-self: flex-start; }
@@ -385,9 +391,9 @@
     <div class="two-grid">
       <div class="service-card pm">
         <div class="service-icon">🏠</div>
-        <div class="service-eyebrow" data-i18n="pm_eyebrow">Gestión de Propiedad</div>
-        <div class="service-title" data-i18n="pm_title">Deja que gestionemos tu propiedad</div>
-        <p class="service-copy" data-i18n="pm_copy">Nos encargamos del día a día de tu alquiler vacacional para que tú no tengas que hacerlo. Actuamos como tu cohost.</p>
+        <div class="service-eyebrow" data-i18n="pm_eyebrow">Servicio de Cohost</div>
+        <div class="service-title" data-i18n="pm_title">Somos tu cohost en Airbnb y Booking.com</div>
+        <p class="service-copy" data-i18n="pm_copy">Nos encargamos del día a día de tu alquiler vacacional para que tú no tengas que hacerlo. Actuamos como tu cohost y cobramos el 15% de cada reserva.</p>
         <ul class="service-list" data-i18n-html="pm_list">
           <li>Gestión Airbnb y Booking.com</li>
           <li>Comunicación con huéspedes</li>
@@ -402,37 +408,38 @@
         </ul>
         <div class="service-price-row">
           <div class="service-price">15%</div>
-          <div class="service-price-note" data-i18n="pm_price_note">de comisión de gestión</div>
+          <div class="service-price-note" data-i18n="pm_price_note">de cada reserva</div>
         </div>
-        <p class="service-fine" data-i18n="pm_fine">Gestión completa desde el 15% de los ingresos por alojamiento. Impuestos, fianzas y gastos repercutibles quedan excluidos de la comisión.</p>
+        <p class="service-fine" data-i18n="pm_fine">Servicio de cohost completo por el 15% de los ingresos por alojamiento de cada reserva. Impuestos, fianzas y gastos repercutibles quedan excluidos de la comisión.</p>
         <a href="#contact" class="btn-primary service-cta" data-i18n="pm_cta">Solicitar Gestión</a>
       </div>
 
       <div class="service-card auto">
         <div class="service-icon">⚙️</div>
+        <span class="promo-badge" data-i18n="auto_badge">Onboarding gratis · Primeros clientes</span>
         <div class="service-eyebrow" data-i18n="auto_eyebrow">Automatización de Alquiler</div>
-        <div class="service-title" data-i18n="auto_title">Automatiza tu alquiler vacacional</div>
-        <p class="service-copy" data-i18n="auto_copy">Mantén el control de tu propiedad mientras automatizamos el trabajo repetitivo detrás de tu operación.</p>
+        <div class="service-title" data-i18n="auto_title">Automatiza tu alquiler vacacional con RCS Check-in</div>
+        <p class="service-copy" data-i18n="auto_copy">Solo tienes que contratar nuestro producto RCS Check-in, que automatiza por completo tu alquiler vacacional, y nuestro soporte para conectarlo con tu Airbnb y Booking.com. El onboarding es gratis.</p>
         <ul class="service-list" data-i18n-html="auto_list">
           <li>Channel Manager</li>
-          <li>Sincronización Airbnb / Booking.com</li>
-          <li>Precio dinámico inteligente</li>
-          <li>Comunicación con IA</li>
+          <li>RCS Check-in</li>
+          <li>Automatización completa con inteligencia artificial</li>
+          <li>Conexión y soporte con Airbnb y Booking.com</li>
+          <li>Comunicación con huéspedes con IA</li>
           <li>Check-in automatizado</li>
+          <li>Precio dinámico inteligente</li>
           <li>Registro de huéspedes online</li>
           <li>Cobro de fianza</li>
           <li>Gestión de tasa turística</li>
-          <li>Verificación automática de huéspedes</li>
           <li>Instrucciones digitales</li>
-          <li>Flujos de limpieza y mantenimiento</li>
           <li>Panel de propietario</li>
         </ul>
         <div class="service-price-row">
-          <div class="service-price">499€</div>
-          <div class="service-price-note" data-i18n="auto_price_note">setup único</div>
+          <div class="service-price free"><span class="price-was">499€</span><span data-i18n="auto_price">GRATIS</span></div>
+          <div class="service-price-note" data-i18n="auto_price_note">onboarding para los primeros clientes</div>
         </div>
-        <p class="service-fine" data-i18n="auto_fine">Implementación y configuración completa de tu sistema de automatización. Soporte continuo opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.</p>
-        <a href="#contact" class="btn-primary service-cta" data-i18n="auto_cta">Automatizar mi Alquiler</a>
+        <p class="service-fine" data-i18n="auto_fine">Aprovecha este momento: los primeros clientes se incorporan gratis. Solo contratas RCS Check-in y nuestro soporte de conexión con Airbnb y Booking.com. Las suscripciones a software de terceros pueden facturarse por separado.</p>
+        <a href="#contact" class="btn-primary service-cta" data-i18n="auto_cta">Empezar gratis</a>
       </div>
     </div>
   </div>
@@ -552,13 +559,13 @@
   <div class="wrap">
     <div class="section-label" data-i18n="price_label">Precios</div>
     <h2 class="h2" data-i18n="price_title">Un modelo claro, sin sorpresas</h2>
-    <p class="lede" data-i18n="price_lede">Elige gestión completa, automatización, o un plan a medida.</p>
+    <p class="lede" data-i18n="price_lede">Tenemos planes para ti: servicio de cohost al 15% de cada reserva, o automatización con RCS Check-in y onboarding gratis.</p>
     <div class="pricing-grid">
       <div class="price-card">
-        <div class="price-tag" data-i18n="p1_tag">Gestión Completa</div>
-        <div class="price-title" data-i18n="p1_title">Property Management</div>
+        <div class="price-tag" data-i18n="p1_tag">Servicio de Cohost</div>
+        <div class="price-title" data-i18n="p1_title">Somos tu cohost</div>
         <div class="price-amount">15%</div>
-        <span class="price-unit" data-i18n="p1_unit">de los ingresos por alojamiento</span>
+        <span class="price-unit" data-i18n="p1_unit">de cada reserva en Airbnb y Booking.com</span>
         <ul class="price-list" data-i18n-html="p1_list">
           <li>Gestión del anuncio</li>
           <li>Comunicación con huéspedes</li>
@@ -573,23 +580,23 @@
         <a href="#contact" class="btn-outline price-cta" data-i18n="p1_cta">Solicitar Gestión</a>
       </div>
       <div class="price-card highlight">
-        <div class="price-tag" data-i18n="p2_tag">Más Elegido</div>
-        <div class="price-title" data-i18n="p2_title">Rental Automation</div>
-        <div class="price-amount">499€</div>
-        <span class="price-unit" data-i18n="p2_unit">setup único</span>
+        <span class="promo-badge" data-i18n="p2_badge">Aprovecha este momento</span>
+        <div class="price-tag" data-i18n="p2_tag">Onboarding gratis · Primeros clientes</div>
+        <div class="price-title" data-i18n="p2_title">Automatización con RCS Check-in</div>
+        <div class="price-amount free"><span class="price-was">499€</span><span data-i18n="p2_amount">GRATIS</span></div>
+        <span class="price-unit" data-i18n="p2_unit">onboarding gratis para los primeros clientes</span>
         <ul class="price-list" data-i18n-html="p2_list">
-          <li>Configuración de Channel Manager</li>
-          <li>Sincronización de reservas</li>
-          <li>Setup de precio dinámico</li>
-          <li>Comunicación con IA</li>
-          <li>Flujos automatizados de huéspedes</li>
-          <li>Flujo de fianza</li>
-          <li>Flujo de tasa turística (donde aplique)</li>
+          <li>Channel Manager</li>
+          <li>RCS Check-in</li>
+          <li>Automatización completa con inteligencia artificial</li>
+          <li>Conexión y soporte con Airbnb y Booking.com</li>
+          <li>Comunicación con huéspedes con IA</li>
           <li>Automatización de check-in</li>
+          <li>Flujo de fianza y tasa turística (donde aplique)</li>
           <li>Pruebas del sistema y formación</li>
         </ul>
-        <p class="price-extra" data-i18n="p2_extra">Soporte opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.</p>
-        <a href="#contact" class="btn-primary price-cta" data-i18n="p2_cta">Automatizar mi Alquiler</a>
+        <p class="price-extra" data-i18n="p2_extra">Solo contratas RCS Check-in, nuestro producto que automatiza por completo tu alquiler vacacional, y nuestro soporte de conexión con Airbnb y Booking.com. Los primeros clientes se incorporan gratis. Las suscripciones a software de terceros pueden facturarse por separado.</p>
+        <a href="#contact" class="btn-primary price-cta" data-i18n="p2_cta">Empezar gratis</a>
       </div>
       <div class="price-card">
         <div class="price-tag" data-i18n="p3_tag">A Medida</div>
@@ -851,18 +858,20 @@
       hero_tag1: "🏠 Cohosting Airbnb", hero_tag2: "⚙️ Automatización con IA", hero_tag3: "🇪🇺 Infraestructura Europea / GDPR",
       services_label: "Dos formas de ayudarte", services_title: "Elige cómo quieres trabajar con nosotros",
       services_lede: "Ya sea que quieras delegarlo todo o quieras seguir al mando y automatizar lo repetitivo, tenemos un modelo pensado para ti.",
-      pm_eyebrow: "Gestión de Propiedad", pm_title: "Deja que gestionemos tu propiedad",
-      pm_copy: "Nos encargamos del día a día de tu alquiler vacacional para que tú no tengas que hacerlo. Actuamos como tu cohost.",
+      pm_eyebrow: "Servicio de Cohost", pm_title: "Somos tu cohost en Airbnb y Booking.com",
+      pm_copy: "Nos encargamos del día a día de tu alquiler vacacional para que tú no tengas que hacerlo. Actuamos como tu cohost y cobramos el 15% de cada reserva.",
       pm_list: "<li>Gestión Airbnb y Booking.com</li><li>Comunicación con huéspedes</li><li>Gestión de reservas</li><li>Precio dinámico</li><li>Check-in y check-out</li><li>Coordinación de limpieza</li><li>Coordinación de mantenimiento</li><li>Registro de viajeros</li><li>Experiencia del huésped</li><li>Reporting al propietario</li>",
-      pm_price_note: "de comisión de gestión",
-      pm_fine: "Gestión completa desde el 15% de los ingresos por alojamiento. Impuestos, fianzas y gastos repercutibles quedan excluidos de la comisión.",
+      pm_price_note: "de cada reserva",
+      pm_fine: "Servicio de cohost completo por el 15% de los ingresos por alojamiento de cada reserva. Impuestos, fianzas y gastos repercutibles quedan excluidos de la comisión.",
       pm_cta: "Solicitar Gestión",
-      auto_eyebrow: "Automatización de Alquiler", auto_title: "Automatiza tu alquiler vacacional",
-      auto_copy: "Mantén el control de tu propiedad mientras automatizamos el trabajo repetitivo detrás de tu operación.",
-      auto_list: "<li>Channel Manager</li><li>Sincronización Airbnb / Booking.com</li><li>Precio dinámico inteligente</li><li>Comunicación con IA</li><li>Check-in automatizado</li><li>Registro de huéspedes online</li><li>Cobro de fianza</li><li>Gestión de tasa turística</li><li>Verificación automática de huéspedes</li><li>Instrucciones digitales</li><li>Flujos de limpieza y mantenimiento</li><li>Panel de propietario</li>",
-      auto_price_note: "setup único",
-      auto_fine: "Implementación y configuración completa de tu sistema de automatización. Soporte continuo opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.",
-      auto_cta: "Automatizar mi Alquiler",
+      auto_badge: "Onboarding gratis · Primeros clientes",
+      auto_eyebrow: "Automatización de Alquiler", auto_title: "Automatiza tu alquiler vacacional con RCS Check-in",
+      auto_copy: "Solo tienes que contratar nuestro producto RCS Check-in, que automatiza por completo tu alquiler vacacional, y nuestro soporte para conectarlo con tu Airbnb y Booking.com. El onboarding es gratis.",
+      auto_list: "<li>Channel Manager</li><li>RCS Check-in</li><li>Automatización completa con inteligencia artificial</li><li>Conexión y soporte con Airbnb y Booking.com</li><li>Comunicación con huéspedes con IA</li><li>Check-in automatizado</li><li>Precio dinámico inteligente</li><li>Registro de huéspedes online</li><li>Cobro de fianza</li><li>Gestión de tasa turística</li><li>Instrucciones digitales</li><li>Panel de propietario</li>",
+      auto_price: "GRATIS",
+      auto_price_note: "onboarding para los primeros clientes",
+      auto_fine: "Aprovecha este momento: los primeros clientes se incorporan gratis. Solo contratas RCS Check-in y nuestro soporte de conexión con Airbnb y Booking.com. Las suscripciones a software de terceros pueden facturarse por separado.",
+      auto_cta: "Empezar gratis",
       process_label: "Cómo funciona", process_title: "De la reserva al check-in — automatizado",
       process_lede: "Así es como el flujo de un huésped se mueve por el sistema, de principio a fin.",
       ai_label: "Inteligencia Artificial", ai_title: "La IA que trabaja detrás de escena",
@@ -889,14 +898,15 @@
       tech_categories: "<span class='category-chip'>IA</span><span class='category-chip'>Precio Dinámico</span><span class='category-chip'>Channel Management</span><span class='category-chip'>Experiencia del Huésped</span><span class='category-chip'>Reservas Directas</span><span class='category-chip'>Automatización</span>",
       who_label: "¿Para quién es esto?", who_title: "Encuentra tu perfil",
       price_label: "Precios", price_title: "Un modelo claro, sin sorpresas",
-      price_lede: "Elige gestión completa, automatización, o un plan a medida.",
-      p1_tag: "Gestión Completa", p1_title: "Property Management", p1_unit: "de los ingresos por alojamiento",
+      price_lede: "Tenemos planes para ti: servicio de cohost al 15% de cada reserva, o automatización con RCS Check-in y onboarding gratis.",
+      p1_tag: "Servicio de Cohost", p1_title: "Somos tu cohost", p1_unit: "de cada reserva en Airbnb y Booking.com",
       p1_list: "<li>Gestión del anuncio</li><li>Comunicación con huéspedes</li><li>Precio dinámico</li><li>Gestión de reservas</li><li>Check-in / check-out</li><li>Registro de viajeros</li><li>Coordinación de limpieza</li><li>Coordinación de mantenimiento</li><li>Reporting al propietario</li>",
       p1_cta: "Solicitar Gestión",
-      p2_tag: "Más Elegido", p2_title: "Rental Automation", p2_unit: "setup único",
-      p2_list: "<li>Configuración de Channel Manager</li><li>Sincronización de reservas</li><li>Setup de precio dinámico</li><li>Comunicación con IA</li><li>Flujos automatizados de huéspedes</li><li>Flujo de fianza</li><li>Flujo de tasa turística (donde aplique)</li><li>Automatización de check-in</li><li>Pruebas del sistema y formación</li>",
-      p2_extra: "Soporte opcional desde 49€/mes. Las suscripciones a software de terceros pueden facturarse por separado.",
-      p2_cta: "Automatizar mi Alquiler",
+      p2_badge: "Aprovecha este momento",
+      p2_tag: "Onboarding gratis · Primeros clientes", p2_title: "Automatización con RCS Check-in", p2_amount: "GRATIS", p2_unit: "onboarding gratis para los primeros clientes",
+      p2_list: "<li>Channel Manager</li><li>RCS Check-in</li><li>Automatización completa con inteligencia artificial</li><li>Conexión y soporte con Airbnb y Booking.com</li><li>Comunicación con huéspedes con IA</li><li>Automatización de check-in</li><li>Flujo de fianza y tasa turística (donde aplique)</li><li>Pruebas del sistema y formación</li>",
+      p2_extra: "Solo contratas RCS Check-in, nuestro producto que automatiza por completo tu alquiler vacacional, y nuestro soporte de conexión con Airbnb y Booking.com. Los primeros clientes se incorporan gratis. Las suscripciones a software de terceros pueden facturarse por separado.",
+      p2_cta: "Empezar gratis",
       p3_tag: "A Medida", p3_title: "Custom Automation", p3_amount: "Desde 799€", p3_unit: "proyecto a medida",
       p3_desc: "Para propietarios con necesidades más complejas, varias propiedades o integraciones personalizadas.",
       p3_cta: "Hablemos",
@@ -944,18 +954,20 @@
       hero_tag1: "🏠 Airbnb Co-hosting", hero_tag2: "⚙️ AI-Powered Automation", hero_tag3: "🇪🇺 EU Infrastructure / GDPR",
       services_label: "Two ways we help", services_title: "Choose how you want to work with us",
       services_lede: "Whether you want to hand it all over or stay in control and automate the repetitive work, we have a model built for you.",
-      pm_eyebrow: "Property Management", pm_title: "Let us manage your property",
-      pm_copy: "We take care of the day-to-day operation of your short-term rental so you don't have to. We act as your co-host.",
+      pm_eyebrow: "Co-hosting Service", pm_title: "We are your co-host on Airbnb and Booking.com",
+      pm_copy: "We take care of the day-to-day operation of your short-term rental so you don't have to. We act as your co-host and charge 15% of every booking.",
       pm_list: "<li>Airbnb & Booking.com management</li><li>Guest communication</li><li>Booking management</li><li>Dynamic pricing</li><li>Check-in & check-out</li><li>Cleaning coordination</li><li>Maintenance coordination</li><li>Traveler registration</li><li>Guest experience</li><li>Owner reporting</li>",
-      pm_price_note: "management fee",
-      pm_fine: "Full-service management from 15% of accommodation revenue. Taxes, security deposits and pass-through expenses are excluded from the commission.",
+      pm_price_note: "of every booking",
+      pm_fine: "Full co-hosting service for 15% of the accommodation revenue of every booking. Taxes, security deposits and pass-through expenses are excluded from the commission.",
       pm_cta: "Request Property Management",
-      auto_eyebrow: "Rental Automation", auto_title: "Automate your short-term rental",
-      auto_copy: "Keep control of your property while we automate the repetitive work behind your rental operation.",
-      auto_list: "<li>Channel Manager</li><li>Airbnb / Booking.com synchronization</li><li>Intelligent dynamic pricing</li><li>AI-powered guest communication</li><li>Automated check-in</li><li>Online guest registration</li><li>Security deposit collection</li><li>Tourist tax workflows</li><li>Automatic guest verification</li><li>Digital guest instructions</li><li>Cleaning & maintenance workflows</li><li>Owner dashboard</li>",
-      auto_price_note: "one-time setup",
-      auto_fine: "Complete implementation and configuration of your rental automation system. Optional ongoing support from €49/month. Third-party software subscriptions may be billed separately.",
-      auto_cta: "Automate My Rental",
+      auto_badge: "Free onboarding · First clients",
+      auto_eyebrow: "Rental Automation", auto_title: "Automate your short-term rental with RCS Check-in",
+      auto_copy: "All you need is our product RCS Check-in, which fully automates your vacation rental, plus our support to connect it to your Airbnb and Booking.com. Onboarding is free.",
+      auto_list: "<li>Channel Manager</li><li>RCS Check-in</li><li>Complete automation with artificial intelligence</li><li>Airbnb & Booking.com connection and support</li><li>AI-powered guest communication</li><li>Automated check-in</li><li>Intelligent dynamic pricing</li><li>Online guest registration</li><li>Security deposit collection</li><li>Tourist tax workflows</li><li>Digital guest instructions</li><li>Owner dashboard</li>",
+      auto_price: "FREE",
+      auto_price_note: "onboarding for our first clients",
+      auto_fine: "Take advantage of this moment: our first clients onboard for free. You only subscribe to RCS Check-in and our Airbnb & Booking.com connection support. Third-party software subscriptions may be billed separately.",
+      auto_cta: "Start for free",
       process_label: "How it works", process_title: "From Booking to Check-In — Automated",
       process_lede: "This is how a guest's journey moves through the system, start to finish.",
       ai_label: "Artificial Intelligence", ai_title: "AI That Works Behind the Scenes",
@@ -982,14 +994,15 @@
       tech_categories: "<span class='category-chip'>AI</span><span class='category-chip'>Dynamic Pricing</span><span class='category-chip'>Channel Management</span><span class='category-chip'>Guest Experience</span><span class='category-chip'>Direct Booking</span><span class='category-chip'>Automation</span>",
       who_label: "Who is this for?", who_title: "Find your profile",
       price_label: "Pricing", price_title: "A clear model, no surprises",
-      price_lede: "Choose full management, automation, or a custom plan.",
-      p1_tag: "Full Management", p1_title: "Property Management", p1_unit: "of accommodation revenue",
+      price_lede: "We have plans for you: a co-hosting service at 15% of every booking, or automation with RCS Check-in and free onboarding.",
+      p1_tag: "Co-hosting Service", p1_title: "We are your co-host", p1_unit: "of every booking on Airbnb and Booking.com",
       p1_list: "<li>Listing management</li><li>Guest communication</li><li>Dynamic pricing</li><li>Booking management</li><li>Check-in / check-out</li><li>Traveler registration workflows</li><li>Cleaning coordination</li><li>Maintenance coordination</li><li>Owner reporting</li>",
       p1_cta: "Request Management",
-      p2_tag: "Most Popular", p2_title: "Rental Automation", p2_unit: "one-time setup",
-      p2_list: "<li>Channel Manager setup</li><li>Booking synchronization</li><li>Dynamic pricing setup</li><li>AI guest communication setup</li><li>Automated guest workflows</li><li>Security deposit workflow</li><li>Tourist tax workflow where applicable</li><li>Check-in automation</li><li>System testing & owner training</li>",
-      p2_extra: "Optional support from €49/month. Third-party software and platform subscription fees may apply separately.",
-      p2_cta: "Automate My Rental",
+      p2_badge: "Take advantage of this moment",
+      p2_tag: "Free onboarding · First clients", p2_title: "Automation with RCS Check-in", p2_amount: "FREE", p2_unit: "free onboarding for our first clients",
+      p2_list: "<li>Channel Manager</li><li>RCS Check-in</li><li>Complete automation with artificial intelligence</li><li>Airbnb & Booking.com connection and support</li><li>AI-powered guest communication</li><li>Check-in automation</li><li>Security deposit & tourist tax workflow where applicable</li><li>System testing & owner training</li>",
+      p2_extra: "You only subscribe to RCS Check-in, our product that fully automates your vacation rental, plus our Airbnb & Booking.com connection support. Our first clients onboard for free. Third-party software subscriptions may be billed separately.",
+      p2_cta: "Start for free",
       p3_tag: "Custom", p3_title: "Custom Automation", p3_amount: "From €799", p3_unit: "custom project",
       p3_desc: "For owners with more complex requirements, multiple properties or custom integrations.",
       p3_cta: "Talk to Us",
@@ -1070,14 +1083,14 @@
 
   var FAQ = {
     es: [
-      ["¿Qué incluye la comisión de gestión del 15%?","El 15% se aplica sobre los ingresos por alojamiento e incluye la gestión operativa completa. Los impuestos, las fianzas y los gastos repercutibles quedan excluidos de la comisión."],
-      ["¿El setup de automatización de 499€ es un pago único?","Sí, los 499€ cubren la implementación y configuración inicial. El soporte continuo es opcional desde 49€/mes, y las suscripciones a software de terceros pueden facturarse por separado."],
+      ["¿Qué incluye el 15% del servicio de cohost?","Cobramos el 15% de cada reserva sobre los ingresos por alojamiento e incluye la gestión operativa completa como tu cohost en Airbnb y Booking.com. Los impuestos, las fianzas y los gastos repercutibles quedan excluidos de la comisión."],
+      ["¿El onboarding de la automatización es realmente gratis?","Sí. Aprovecha este momento: los primeros clientes se incorporan gratis. Solo contratas RCS Check-in, nuestro producto que automatiza por completo tu alquiler vacacional, y nuestro soporte para conectarlo con Airbnb y Booking.com. Las suscripciones a software de terceros pueden facturarse por separado."],
       ["¿Gestionan el registro de viajeros y la tasa turística en cualquier país?","Configuramos flujos según los requisitos locales aplicables y las integraciones disponibles. Estos requisitos varían según el destino."],
       ["¿Puedo combinar gestión de propiedad y automatización?","Sí. Muchos propietarios empiezan con automatización y más adelante añaden gestión completa, o al revés, según cómo evoluciona su operación."]
     ],
     en: [
-      ["What's included in the 15% management fee?","The 15% applies to accommodation revenue and covers full operational management. Taxes, security deposits and pass-through expenses are excluded from the commission."],
-      ["Is the €499 automation setup a one-time payment?","Yes, the €499 covers initial implementation and configuration. Ongoing support is optional from €49/month, and third-party software subscriptions may be billed separately."],
+      ["What's included in the 15% co-hosting fee?","We charge 15% of every booking on accommodation revenue, and it covers full operational management as your co-host on Airbnb and Booking.com. Taxes, security deposits and pass-through expenses are excluded from the commission."],
+      ["Is the automation onboarding really free?","Yes. Take advantage of this moment: our first clients onboard for free. You only subscribe to RCS Check-in, our product that fully automates your vacation rental, plus our support to connect it to Airbnb and Booking.com. Third-party software subscriptions may be billed separately."],
       ["Do you handle traveler registration and tourist tax everywhere?","We configure workflows according to the applicable local requirements and available integrations. These requirements vary by destination."],
       ["Can I combine property management and automation?","Yes. Many owners start with automation and later add full management, or the other way around, as their operation evolves."]
     ]
